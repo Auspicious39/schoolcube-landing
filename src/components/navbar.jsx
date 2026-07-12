@@ -47,29 +47,34 @@ const Navbar = () => {
       </div>
 
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-white md:hidden">
+        <div className="fixed inset-0 z-50 flex min-h-screen flex-col bg-white px-6 pb-8 pt-5 md:hidden">
+          <div className="flex items-center justify-between">
+            <Link to="/" onClick={closeMobileMenu}>
+              <img src={logo} alt="Schoolcube" className="w-[145px] object-contain" />
+            </Link>
           <button
             type="button"
             aria-label="Close navigation menu"
             onClick={closeMobileMenu}
-            className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center text-white"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-[#e1e6f1] text-[#203684]"
           >
-            <X size={30} strokeWidth={1.8} />
+            <X size={24} strokeWidth={2} />
           </button>
+          </div>
 
-          <nav className="absolute inset-x-10  flex flex-col gap-3 text-xl font-medium text-[#000000]">
-            <NavLink end to="/" onClick={closeMobileMenu}>Home</NavLink>
-            <NavLink to="/features" onClick={closeMobileMenu}>Features</NavLink>
-            <NavLink to="/pricing" onClick={closeMobileMenu}>Pricing</NavLink>
-            <Link to="/blog" onClick={closeMobileMenu}>Blog</Link>
-            <NavLink to="/contact" onClick={closeMobileMenu}>Contact</NavLink>
-            <Link to="/schoolrevs" onClick={closeMobileMenu}>SchoolRevs Suite</Link>
+          <nav className="mt-16 flex flex-col border-t border-[#edf0f5] text-[18px] font-medium text-[#1f1f1f]">
+            <NavLink end to="/" onClick={closeMobileMenu} className={({ isActive }) => `border-b border-[#edf0f5] py-5 ${isActive ? "font-bold text-[#203684]" : ""}`}>Home</NavLink>
+            <NavLink to="/features" onClick={closeMobileMenu} className={({ isActive }) => `border-b border-[#edf0f5] py-5 ${isActive ? "font-bold text-[#203684]" : ""}`}>Features</NavLink>
+            <NavLink to="/pricing" onClick={closeMobileMenu} className={({ isActive }) => `border-b border-[#edf0f5] py-5 ${isActive ? "font-bold text-[#203684]" : ""}`}>Pricing</NavLink>
+            <Link to="/blog" onClick={closeMobileMenu} className="border-b border-[#edf0f5] py-5">Blog</Link>
+            <NavLink to="/contact" onClick={closeMobileMenu} className={({ isActive }) => `border-b border-[#edf0f5] py-5 ${isActive ? "font-bold text-[#203684]" : ""}`}>Contact</NavLink>
+            <Link to="/schoolrevs" onClick={closeMobileMenu} className="border-b border-[#edf0f5] py-5">SchoolRevs Suite</Link>
           </nav>
 
           <Link
             to="/signup"
             onClick={closeMobileMenu}
-            className="absolute bottom-0 left-[] flex h-[49px] w-[calc(201px)] -translate-x-1/2 items-center justify-center rounded-t-[5px] bg-[#203684] text-[16px] font-semibold text-white"
+            className="mt-auto flex h-[52px] w-full items-center justify-center rounded-[5px] bg-[#203684] text-[16px] font-semibold text-white"
           >
             Get Started
           </Link>
