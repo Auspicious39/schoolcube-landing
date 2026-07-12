@@ -1,66 +1,29 @@
 import { Mail, Phone } from "lucide-react";
 
-const ContactPage = () => (
-  <main className="overflow-hidden bg-white px-5 pb-[106px] pt-[53px] sm:px-6 lg:pt-[58px]">
-    <section className="mx-auto max-w-[1200px]">
-      <div className="mx-auto max-w-[720px] text-center">
-        <h1 className="text-[42px] font-bold leading-[1.18] tracking-[-1.8px] text-[#203684] sm:text-[52px] lg:text-[56px]">
-          Let’s Hear From You
-        </h1>
-        <p className="mx-auto mt-4 max-w-[695px] text-[16px] leading-[1.55] tracking-[-0.2px] text-[#4c4c4c] sm:text-[18px] lg:text-[20px]">
-          Our team of experts are ready to help. Please fill the form below to enable us serve you better.
-        </p>
-      </div>
-
-      <div className="relative mx-auto mt-[62px] max-w-[1010px] pt-[196px] lg:mt-[67px] lg:pt-[202px]">
-        <div className="h-[412px] bg-[#f1f9ff]" />
-
-        <span className="pointer-events-none absolute left-[-35px] top-[143px] h-[44px] w-[50px] rotate-[28deg] rounded-tl-[45px] border-l-[4px] border-t-[4px] border-[#339bfe]" />
-        <span className="pointer-events-none absolute left-[-6px] top-[148px] h-[32px] w-[36px] rotate-[40deg] rounded-tl-[36px] border-l-[4px] border-t-[4px] border-[#339bfe]" />
-        <span className="pointer-events-none absolute right-[-56px] top-[124px] h-[58px] w-[58px] rounded-full border-[3px] border-[#339bfe]" />
-        <span className="pointer-events-none absolute right-[-46px] top-[130px] h-[48px] w-[48px] rounded-full border-l-[3px] border-[#339bfe]" />
-
-        <form className="absolute left-1/2 top-0 w-[min(560px,calc(100%_-_36px))] -translate-x-1/2 bg-white px-7 py-[68px] shadow-[0_12px_30px_rgba(32,54,132,0.045)] sm:px-[70px]" onSubmit={(event) => event.preventDefault()}>
-          <label className="block">
-            <span className="mb-1.5 block text-[14px] font-medium text-[#585858]">Name</span>
-            <input type="text" name="name" placeholder="Enter your full name" className="h-[46px] w-full rounded-[5px] border border-[#e2e2e8] px-[14px] text-[13px] text-[#3c3c3c] outline-none placeholder:text-[#c6c6c9] focus:border-[#339bfe]" />
-          </label>
-          <label className="mt-[15px] block">
-            <span className="mb-1.5 block text-[14px] font-medium text-[#585858]">Email</span>
-            <input type="email" name="email" placeholder="Enter your email" className="h-[46px] w-full rounded-[5px] border border-[#e2e2e8] px-[14px] text-[13px] text-[#3c3c3c] outline-none placeholder:text-[#c6c6c9] focus:border-[#339bfe]" />
-          </label>
-          <label className="mt-[15px] block">
-            <span className="mb-1.5 block text-[14px] font-medium text-[#585858]">Message</span>
-            <textarea name="message" rows={5} placeholder="Your Message" className="h-[118px] w-full resize-none rounded-[5px] border border-[#e2e2e8] px-[14px] py-3 text-[13px] text-[#3c3c3c] outline-none placeholder:text-[#c6c6c9] focus:border-[#339bfe]" />
-          </label>
-          <button type="submit" className="mt-[28px] h-[54px] w-full rounded-[8px] bg-[#263e93] text-[13px] font-medium text-white transition hover:bg-[#203684]">
-            Get Started
-          </button>
-        </form>
-      </div>
-
-      <div className="mx-auto mt-[126px] grid max-w-[1200px] gap-7 md:grid-cols-2 md:gap-[28px]">
-        <article className="flex min-h-[130px] items-center justify-center gap-8 border border-[#e1e2e6] px-6 py-8 sm:px-10">
-          <span className="flex h-[40px] w-[40px] shrink-0 items-center justify-center rounded-full bg-[#eef7ff] text-[#203e94]">
-            <Mail size={21} strokeWidth={1.8} />
-          </span>
-          <div>
-            <h2 className="text-[23px] font-medium leading-7 text-black">Email</h2>
-            <p className="mt-1 text-[14px] leading-6 text-[#888]">info@schoolcube.net<br />support@schoolcube.net</p>
-          </div>
-        </article>
-        <article className="flex min-h-[130px] items-center justify-center gap-8 border border-[#e1e2e6] px-6 py-8 sm:px-10">
-          <span className="flex h-[40px] w-[40px] shrink-0 items-center justify-center rounded-full bg-[#eef7ff] text-[#203e94]">
-            <Phone size={20} strokeWidth={1.8} />
-          </span>
-          <div>
-            <h2 className="text-[23px] font-medium leading-7 text-black">Phone</h2>
-            <p className="mt-1 text-[14px] leading-6 text-[#888]">(+234)705-394-4592<br />(+234)705-394-4594</p>
-          </div>
-        </article>
-      </div>
-    </section>
-  </main>
-);
-
-export default ContactPage;
+export default function ContactPage() {
+  return (
+    <main className="bg-white px-6 pb-[108px] pt-[46px]">
+      <section className="mx-auto max-w-[1200px]">
+        <div className="mx-auto max-w-[846px] text-center">
+          <h1 className="text-[42px] font-bold leading-[1.39] tracking-[0.4px] text-[#203684] md:text-[56px]">Let’s Hear From You</h1>
+          <p className="mt-[19px] text-[16px] leading-[1.7] tracking-[0.3px] text-[#47505b] md:text-[20px]">Our team of experts are ready to help. Please fill the form below to enable us serve you better.</p>
+        </div>
+        <section className="relative mx-auto mt-[84px] max-w-[1076px] pt-[176px]">
+          <div className="absolute inset-x-0 bottom-0 h-[412px] bg-[#f0f8ff]" />
+          <span className="absolute left-[-39px] top-[145px] h-12 w-12 rounded-full border-[3px] border-[#339bfe] border-r-transparent" aria-hidden="true" />
+          <span className="absolute right-[-54px] top-[116px] h-12 w-12 rounded-full border-[3px] border-[#339bfe] border-l-transparent" aria-hidden="true" />
+          <form onSubmit={(event) => event.preventDefault()} className="relative z-10 mx-auto w-full max-w-[558px] bg-white px-[70px] py-[72px] shadow-[0_10px_30px_rgba(35,54,132,0.04)]">
+            <label className="block text-[16px] font-medium text-[#5c5f66]">Name<input className="mt-2 h-[47px] w-full rounded-[6px] border border-[#e1e3e8] px-[14px] text-[14px] text-[#47505b] outline-none placeholder:text-[#c8cbd1] focus:border-[#203684]" placeholder="Enter your full name" /></label>
+            <label className="mt-4 block text-[16px] font-medium text-[#5c5f66]">Email<input type="email" className="mt-2 h-[47px] w-full rounded-[6px] border border-[#e1e3e8] px-[14px] text-[14px] text-[#47505b] outline-none placeholder:text-[#c8cbd1] focus:border-[#203684]" placeholder="Enter your email" /></label>
+            <label className="mt-4 block text-[16px] font-medium text-[#5c5f66]">Message<textarea className="mt-2 h-[118px] w-full resize-none rounded-[6px] border border-[#e1e3e8] px-[14px] py-3 text-[14px] text-[#47505b] outline-none placeholder:text-[#c8cbd1] focus:border-[#203684]" placeholder="Your Message" /></label>
+            <button className="mt-7 h-[54px] w-full rounded-[8px] bg-[#203684] text-[14px] font-medium text-white transition hover:bg-[#172a6a]">Get Started</button>
+          </form>
+        </section>
+        <section className="mt-[126px] grid gap-7 md:grid-cols-2">
+          <article className="flex min-h-[130px] items-center justify-center gap-8 border border-[#e0e3e8] px-8 py-7"><span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#f0f8ff] text-[#203684]"><Mail size={21} strokeWidth={1.8} /></span><div><h2 className="text-[24px] font-medium text-[#111]">Email</h2><p className="mt-1 text-[16px] leading-7 text-[#94979d]">info@schoolcube.net<br />support@schoolcube.net</p></div></article>
+          <article className="flex min-h-[130px] items-center justify-center gap-8 border border-[#e0e3e8] px-8 py-7"><span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#f0f8ff] text-[#203684]"><Phone size={21} strokeWidth={1.8} /></span><div><h2 className="text-[24px] font-medium text-[#111]">Phone</h2><p className="mt-1 text-[16px] leading-7 text-[#94979d]">(+234)705–394–4592<br />(+234)705–394–4594</p></div></article>
+        </section>
+      </section>
+    </main>
+  );
+}
