@@ -19,7 +19,7 @@ const Navbar = () => {
         <NavLink end to="/" className={({ isActive }) => isActive ? "font-bold text-[#203684]" : "hover:text-[#203684]"}>Home</NavLink>
         <NavLink to="/features" className={({ isActive }) => isActive ? "font-bold text-[#203684]" : "hover:text-[#203684]"}>Features</NavLink>
         <NavLink to="/pricing" className={({ isActive }) => isActive ? "font-bold text-[#203684]" : "hover:text-[#203684]"}>Pricing</NavLink>
-        <Link to="/blog" className="hover:text-[#203684]">Blog</Link>
+        {/* <Link to="/blog" className="hover:text-[#203684]">Blog</Link> */}
         <NavLink to="/contact" className={({ isActive }) => isActive ? "font-bold text-[#203684]" : "hover:text-[#203684]"}>
           Contact
         </NavLink>
@@ -47,7 +47,7 @@ const Navbar = () => {
       </div>
 
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-black md:hidden">
+        <div className="fixed inset-0 z-50 bg-white md:hidden">
           <button
             type="button"
             aria-label="Close navigation menu"
@@ -57,7 +57,7 @@ const Navbar = () => {
             <X size={30} strokeWidth={1.8} />
           </button>
 
-          <nav className="absolute inset-x-10 top-[18%] flex flex-col items-center gap-7 text-xl font-medium text-white">
+          <nav className="absolute inset-x-10  flex flex-col gap-3 text-xl font-medium text-[#000000]">
             <NavLink end to="/" onClick={closeMobileMenu}>Home</NavLink>
             <NavLink to="/features" onClick={closeMobileMenu}>Features</NavLink>
             <NavLink to="/pricing" onClick={closeMobileMenu}>Pricing</NavLink>
@@ -69,7 +69,7 @@ const Navbar = () => {
           <Link
             to="/signup"
             onClick={closeMobileMenu}
-            className="absolute bottom-0 left-1/2 flex h-[74px] w-[calc(100%_-_96px)] -translate-x-1/2 items-center justify-center rounded-t-[12px] bg-[#293f91] text-[24px] font-medium text-white"
+            className="absolute bottom-0 left-[] flex h-[49px] w-[calc(201px)] -translate-x-1/2 items-center justify-center rounded-t-[5px] bg-[#203684] text-[16px] font-semibold text-white"
           >
             Get Started
           </Link>
