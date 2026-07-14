@@ -16,8 +16,8 @@ export default function PricingPage() {
     <main className="bg-white px-6 pb-[105px] pt-[46px]">
       <section className="mx-auto max-w-[1200px]">
         <div className="mx-auto max-w-[846px] text-center">
-          <h1 className="text-[42px] font-bold leading-[1.39] tracking-[0.4px] text-[#203684] md:text-[56px]">Pricing that Suits You</h1>
-          <p className="mt-[19px] text-[16px] leading-[1.7] tracking-[0.3px] text-[#47505b] md:text-[20px]">Our subscriptions come with flexible and convenient packages for various school needs. Subscribe to either Schoolbolt or SchoolPro plan to experience our amazing service.</p>
+          <h1 className="text-[18px] font-bold leading-[1.3] tracking-[0.4px] text-[#203684] md:text-[56px]">Pricing that Suits You</h1>
+          <p className="mt-[19px] text-[18px] leading-[1.7] tracking-[0.3px] text-[#475467] md:text-[20px]">Our subscriptions come with flexible and convenient packages for various school needs. Subscribe to either Schoolbolt or SchoolPro plan to experience our amazing service.</p>
         </div>
         <div className="mt-[128px] overflow-x-auto pb-3">
           <div className="min-w-[1200px]">

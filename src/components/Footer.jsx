@@ -14,11 +14,11 @@ const Footer = () => {
           />
 
           <div className="mb-8">
-            <h3 className="mb-4 text-[18px] font-medium text-[#222222]">
+            <h3 className="mb-4 text-[16px] font-medium text-[#424242]">
               Address
             </h3>
 
-            <p className="text-[14px] leading-8 text-[#8a8a8a]">
+            <p className="text-[14px] leading-8 text-[#666666]">
               12 Ajisafe street, Ikeja
               <br />
               GRA
@@ -26,11 +26,11 @@ const Footer = () => {
           </div>
 
           <div className="mb-8">
-            <h3 className="mb-4 text-[18px] font-medium text-[#222222]">
+            <h3 className="mb-4 text-[18px] font-medium text-[#424242]">
               Contact
             </h3>
 
-            <p className="text-[14px] leading-8 text-[#8a8a8a]">
+            <p className="text-[14px] leading-8 text-[#424242]">
               info@schoolcube.net
               <br />
               support@schoolcube.net
@@ -38,11 +38,11 @@ const Footer = () => {
           </div>
 
           <div className="mb-10">
-            <h3 className="mb-4 text-[18px] font-medium text-[#222222]">
+            <h3 className="mb-4 text-[18px] font-medium text-[#424242]">
               Phone
             </h3>
 
-            <p className="text-[14px] leading-8 text-[#8a8a8a]">
+            <p className="text-[14px] leading-8 text-[#424242]">
               +234-012914298
               <br />
               +234-705-394-4592
@@ -53,7 +53,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="mb-8 flex gap-10 text-[16px] text-[#222222]">
+          <div className="mb-8 flex gap-10 text-[14px] font-semi-bold text-[#424242]">
             <a href="/">Facebook</a>
             <a href="/">Instagram</a>
             <a href="/">Linkedin</a>
@@ -93,11 +93,11 @@ const Footer = () => {
             </div>
 
             <div>
-              <h3 className="mb-4 text-[14px] font-medium text-[#222222]">
+              <h3 className="mb-4 text-[16px] font-medium text-[#424242]">
                 Phone
               </h3>
 
-              <p className="text-[12px] leading-5 text-[#8a8a8a]">
+              <p className="text-[14px] leading-5 text-[#424242]">
                 +234-012914298 <br />
                 +234-705-394-4592 <br />
                 +234-705-394-4594 <br />
@@ -107,10 +107,10 @@ const Footer = () => {
           </div>
 
           <div className="mt-[76px] border-t border-[#e5e5e5] pt-7">
-            <div className="flex items-center justify-between text-[11px] text-[#5f5f5f]">
+            <div className="flex items-center justify-between text-[11px] text-[#424242]">
               <p>Copyright © 2026 Revocube. All Rights Reserved</p>
 
-              <div className="flex gap-8">
+              <div className="flex gap-8 text-[#424242]">
                 <a href="/">Facebook</a>
                 <a href="/">Instagram</a>
                 <a href="/">Linkedin</a>
