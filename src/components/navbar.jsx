@@ -62,13 +62,13 @@ const Navbar = () => {
           </button>
           </div>
 
-          <nav className="mt-16 flex flex-col border-t border-[#edf0f5] text-[18px] font-medium text-[#1f1f1f]">
-            <NavLink end to="/" onClick={closeMobileMenu} className={({ isActive }) => `border-b border-[#edf0f5] py-5 ${isActive ? "font-bold text-[#203684]" : ""}`}>Home</NavLink>
-            <NavLink to="/features" onClick={closeMobileMenu} className={({ isActive }) => `border-b border-[#edf0f5] py-5 ${isActive ? "font-bold text-[#203684]" : ""}`}>Features</NavLink>
-            <NavLink to="/pricing" onClick={closeMobileMenu} className={({ isActive }) => `border-b border-[#edf0f5] py-5 ${isActive ? "font-bold text-[#203684]" : ""}`}>Pricing</NavLink>
-            <Link to="/blog" onClick={closeMobileMenu} className="border-b border-[#edf0f5] py-5">Blog</Link>
-            <NavLink to="/contact" onClick={closeMobileMenu} className={({ isActive }) => `border-b border-[#edf0f5] py-5 ${isActive ? "font-bold text-[#203684]" : ""}`}>Contact</NavLink>
-            <Link to="/schoolrevs" onClick={closeMobileMenu} className="border-b border-[#edf0f5] py-5">SchoolRevs Suite</Link>
+          <nav className="mt-16 flex flex-col  d text-[18px] font-medium text-[#1f1f1f]">
+            <NavLink end to="/" onClick={closeMobileMenu} className={({ isActive }) => ` py-5 ${isActive ? "font-bold text-[#203684]" : ""}`}>Home</NavLink>
+            <NavLink to="/features" onClick={closeMobileMenu} className={({ isActive }) => ` py-5 ${isActive ? "font-bold text-[#203684]" : ""}`}>Features</NavLink>
+            <NavLink to="/pricing" onClick={closeMobileMenu} className={({ isActive }) => ` py-5 ${isActive ? "font-bold text-[#203684]" : ""}`}>Pricing</NavLink>
+            <Link to="/blog" onClick={closeMobileMenu} className=" py-5">Blog</Link>
+            <NavLink to="/contact" onClick={closeMobileMenu} className={({ isActive }) => ` py-5 ${isActive ? "font-bold text-[#203684]" : ""}`}>Contact</NavLink>
+            <Link to="/schoolrevs" onClick={closeMobileMenu} className=" py-5">SchoolRevs Suite</Link>
           </nav>
 
           <Link
