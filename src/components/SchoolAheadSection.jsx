@@ -1,72 +1,81 @@
-import { Crosshair, LockKeyhole, ThumbsUp } from "lucide-react";
+import { VscThumbsupFilled } from "react-icons/vsc";
+import { PiCrosshairThin } from "react-icons/pi";
+import { LuLockKeyhole } from "react-icons/lu";
 
 const SchoolAheadSection = () => {
   return (
-    <section className="bg-white px-4 py-10 md:px-6 md:py-16">
-      <div className="mx-auto max-w-[1050px]">
-        {/* Header */}
-        <div className="mb-8 grid grid-cols-2 gap-5 md:mb-10 md:gap-8">
-          <h2 className="text-[18px] font-extrabold leading-tight text-[#203684] md:text-[30px]">
-            Put Your School Ahead <br />
+    <section className="bg-white px-4 py-12 md:px-6 md:py-16">
+      <div className="mx-auto flex w-full max-w-[1200px] flex-col justify-between md:h-[415px]">
+        <div className="flex flex-col gap-8 md:h-[104px] md:flex-row md:items-start md:justify-between">
+          <h2 className="max-w-[438px] text-[32px] font-bold leading-[130%] text-[#203684] md:text-[40px]">
+            Put Your School Ahead
+            <br />
             of Others
           </h2>
 
-          <p className="text-[12px] leading-6 text-[#4b5568] md:ml-auto md:max-w-[400px] md:text-[13px] md:leading-6">
+          <p className="max-w-[438px] text-[16px] font-medium leading-[155%] text-[#475467] md:text-[18px]">
             Increase the efficiency of your school by eliminating manual
             management tasks, which are prone to errors.
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid gap-6 md:grid-cols-3 md:gap-7">
-          <article className="rounded-[12px] bg-[#f5fbff] p-5 md:rounded-[10px] md:p-7">
-            <ThumbsUp
-              size={22}
-              className="mb-5 text-[#10c997]"
-              fill="#10c997"
+
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-[31px]">
+          <article className="flex h-[259px] flex-col gap-6 rounded-[20px] bg-[#F6FBFF] pt-[31px] pr-[20px] pb-[20px] pl-[31px]">
+            <VscThumbsupFilled
+              size={40}
+              className="text-[#10C997]"
+              fill="#10C997"
             />
 
-            <h3 className="mb-3 text-[14px] font-extrabold text-[#2a2d32] md:text-[15px]">
-              Tailored to Meet your School's Needs
+
+            <h3 className="max-w-[296px] text-[20px] font-bold leading-[140%] text-[#282828]">
+              Tailored to Meet your School’s Needs
             </h3>
 
-            <p className="text-[12px] leading-6 text-[#435169] md:text-[12px] md:leading-5">
+            <p className="max-w-[311px] text-[14px] font-medium leading-[155%] text-[#475467]">
               The structure and feature of the Schoolcube portal allows schools
               to customize the functions to suit their individual needs.
             </p>
           </article>
 
-          <article className="rounded-[12px] bg-[#f5fbff] p-5 md:rounded-[10px] md:p-7">
-            <Crosshair
-              size={22}
-              className="mb-5 text-[#ffbd59]"
-            />
 
-            <h3 className="mb-3 text-[14px] font-extrabold text-[#2a2d32] md:text-[15px]">
+          <article className="flex h-[259px] flex-col gap-6 rounded-[20px] bg-[#F6FBFF] pt-[31px] pr-[20px] pb-[20px] pl-[31px]">
+            <PiCrosshairThin
+              size={40}
+              className="text-[#FFBD59]"
+              fill="#FFC16A" />
+
+
+            <h3 className="max-w-[296px] text-[20px] font-bold leading-[140%] text-[#282828]">
               Easy Access and Navigation
             </h3>
 
-            <p className="text-[12px] leading-6 text-[#435169] md:text-[12px] md:leading-5">
+            <p className="max-w-[311px] text-[14px] font-medium leading-[155%] text-[#475467]">
               We have built a customer-friendly and simple to navigate platform
               for you.
             </p>
           </article>
 
-          <article className="rounded-[12px] bg-[#f5fbff] p-5 md:rounded-[10px] md:p-7">
-            <LockKeyhole
-              size={22}
-              className="mb-5 text-[#2f95ff]"
-            />
 
-            <h3 className="mb-3 text-[14px] font-extrabold text-[#2a2d32] md:text-[15px]">
+          <article className="flex h-[259px] flex-col gap-6 rounded-[20px] bg-[#F6FBFF] pt-[31px] pr-[20px] pb-[20px] pl-[31px]">
+            <LuLockKeyhole
+              size={40}
+              className="text-[#2F95FF]"
+              fill="#339BFE"
+            />
+          
+
+            <h3 className="max-w-[296px] text-[20px] font-bold leading-[140%] text-[#282828]">
               Your School Data is Safe
             </h3>
 
-            <p className="text-[12px] leading-6 text-[#435169] md:text-[12px] md:leading-5">
+            <p className="max-w-[311px] text-[14px] font-medium leading-[155%] text-[#475467]">
               We've built a high profile security perimeter around every
               school's account to ensure that only administrators have access.
             </p>
           </article>
+
         </div>
       </div>
     </section>

@@ -22,7 +22,6 @@ const AnimatedCard = ({ src, alt }) => {
 const FeaturesPage = () => {
   return (
     <div className="bg-white">
-      {/* HERO SECTION */}
       <main className="px-4 pt-6 pb-0 md:px-6 md:pt-[70px]">
         <div className="mx-auto max-w-[1200px] text-center">
           <h1 className="mb-3 text-[18px] font-extrabold leading-tight text-[#203684] md:mb-4 md:text-[56px] md:leading-[1.25]">
@@ -53,12 +52,11 @@ const FeaturesPage = () => {
               className="w-full rounded-[10px] object-contain"
             />
           </div>
-
-          <KeyBenefits />
         </div>
+          <KeyBenefits />
       </main>
 
-      {/* WHY CHOOSE US */}
+      
       <section className="bg-white px-4 py-10 md:px-6 md:py-[90px]">
         <div className="relative mx-auto max-w-[1220px] overflow-hidden rounded-[4px]">
           <div className="relative min-h-[220px] md:min-h-[555px]">
@@ -89,7 +87,7 @@ const FeaturesPage = () => {
           </div>
         </div>
 
-        {/* FEATURE CARDS */}
+      
         <div className="bg-[#f3f6f9] px-4 py-14 md:px-6 md:py-[110px]">
           <div className="flex flex-col gap-8 md:gap-20">
             <AnimatedCard src={oneStopCard} alt="One Stop Solution" />

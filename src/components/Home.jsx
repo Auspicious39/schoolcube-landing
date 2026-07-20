@@ -10,7 +10,7 @@ import SetupBanner from "./SetupBanner";
 const Home = () => {
   return (
     <>
-      <main className="bg-white px-4 pb-5 pt-2 md:px-6 md:pb-9 md:pt-[92px]">
+      <main className="bg-white px-4 pb-5 pt-2 md:px-6 md:pb-9 md:pt-[px]">
         <div className="mx-auto max-w-[1200px]">
           <HeroText />
           <TrustBadges />
