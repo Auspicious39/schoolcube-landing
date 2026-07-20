@@ -5,7 +5,6 @@ const Footer = () => {
     <footer className="bg-white px-4 pb-8 pt-10 md:px-6 md:pb-[87px] md:pt-[79px]">
       <div className="mx-auto max-w-[1200px]">
 
-        {/* Mobile Layout */}
         <div className="md:hidden">
           <img
             src={logo}
@@ -39,7 +38,7 @@ const Footer = () => {
 
           <div className="mb-10">
             <h3 className="mb-4 text-[18px] font-medium text-[#424242]">
-              Phone
+              Phone, 
             </h3>
 
             <p className="text-[14px] leading-8 text-[#424242]">
@@ -66,7 +65,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Desktop Layout */}
+
         <div className="hidden md:block">
           <div className="grid gap-5 md:gap-12 md:grid-cols-[1.6fr_0.55fr_0.7fr_0.7fr]">
             <img src={logo} alt="Schoolcube" className="w-[195px]" />
