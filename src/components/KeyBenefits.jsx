@@ -46,26 +46,36 @@ const benefits = [
 
 const KeyBenefits = () => {
   return (
-    <section className="bg-white py-10 md:py-[100px]">
-      <div className="mx-auto max-w-[1200px]">
-        {/* Header */}
-        <div className="mb-8 grid grid-cols-2 gap-6 md:mb-[90px] md:gap-8">
-          <h2 className="text-[18px] font-extrabold leading-tight text-[#203684] md:text-[42px]">
+    <section className="bg-white py-10 py-[100px] mx-auto max-w-[1200px]">
+      <div className=" flex flex-col gap-[130px]">
+        {/* <div className="flex max-w-[322px] flex-row items-start gap-6 md:h-[87px] md:max-w-none md:justify-between md:gap-[324px]">
+          <h2 className="w-[142px] text-[18px] font-bold leading-[136%] tracking-[0.2px] text-[#203684] md:w-[438px] md:text-[40px]">
             Key Benefits
           </h2>
 
-          <p className="text-[12px] leading-6 text-[#4b5568] md:ml-auto md:max-w-[438px] md:text-[13px] md:leading-6">
+          <p className="w-[156px] text-[14px] font-normal leading-[155%] tracking-[0px] text-[#475467] md:w-[438px] md:text-[18px]">
             Discover the advantages that help schools operate more efficiently,
             save time, and deliver a better learning experience.
           </p>
+        </div> */}
+        <div className="mx-auto max-w-[1200px]">
+          <div className="flex max-w-[322px] flex-row items-start gap-12 md:gap-110 md:h-[108px] md:max-w-none md:flex-row md:items-center md:justify-between">
+            <h2 className="max-w-[142px] text-[18px] font-bold leading-[136%] tracking-[0.2px] text-[#203684] md:max-w-[498px] md:text-[40px]">
+              Key Benefits
+            </h2>
+
+            <p className="max-w-[156px] text-[14px] font-normal text-[#475467] md:max-w-[498px] md:text-[18px]">
+              Discover the advantages that help schools operate more
+              efficiently, save time, and deliver a better learning experience.
+            </p>
+          </div>
         </div>
 
-        {/* Cards */}
-        <div className="grid gap-8 md:mx-auto md:max-w-[922px] md:grid-cols-2 md:gap-[74px_52px]">
+        <div className="mx-auto grid w-full max-w-[327px] grid-cols-1 gap-12 md:max-w-[922px] md:grid-cols-2 md:gap-x-[52px] md:gap-y-[74px]">
           {benefits.map((benefit) => (
             <article
               key={benefit.title}
-              className="rounded-[20px] bg-[#f4f4f4] p-5 md:min-h-[396px] md:rounded-[10px] md:p-[29px]"
+              className="min-h-[396px] rounded-[20px] bg-[#f4f4f4] p-5 md:rounded-[10px] md:p-[29px]"
             >
               <h3 className="mb-3 text-[16px] font-extrabold text-[#333333] md:mb-3 md:text-[17px]">
                 {benefit.title}

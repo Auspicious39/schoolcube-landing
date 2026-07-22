@@ -3,6 +3,7 @@ import TrustBadges from "./TrustBadges";
 import NeedsSection from "./NeedsSection";
 import SchoolAheadSection from "./SchoolAheadSection";
 import HassleSection from "./HassleSection";
+import FeatureTabs from "./FeatureTabs";
 import Partners from "./Partners";
 import KeyBenefits from "./KeyBenefits";
 import SetupBanner from "./SetupBanner";
@@ -10,13 +11,14 @@ import SetupBanner from "./SetupBanner";
 const Home = () => {
   return (
     <>
-      <main className="bg-white px-4 pb-5 pt-2 md:px-6 md:pb-9 md:pt-[px]">
+      <main className="overflow-x-hidden bg-white px-4 pb-5 pt-2 md:px-6 md:pb-9 md:pt-10">
         <div className="mx-auto max-w-[1200px]">
           <HeroText />
           <TrustBadges />
           <NeedsSection />
           <SchoolAheadSection />
           <HassleSection />
+          <FeatureTabs />
           <Partners />
           <KeyBenefits />
           <SetupBanner />
