@@ -16,7 +16,7 @@ const Navbar = () => {
     }`;
 
   return (
-    <header className="relative z-40 bg-white px-4 py-2 md:px-6 md:py-[45px]">
+    <header className="relative z-40 bg-white px-4 py-2 md:px-6 md:py-[35px]">
       <div className="mx-auto flex h-11 max-w-[1209px] items-center justify-between md:h-[67px]">
         <Link to="/">
           <img
@@ -31,9 +31,7 @@ const Navbar = () => {
             end
             to="/"
             className={({ isActive }) =>
-              isActive
-                ? "font-bold text-[#203684]"
-                : "hover:text-[#203684]"
+              isActive ? "font-bold text-[#203684]" : "hover:text-[#203684]"
             }
           >
             Home
@@ -42,9 +40,7 @@ const Navbar = () => {
           <NavLink
             to="/features"
             className={({ isActive }) =>
-              isActive
-                ? "font-bold text-[#203684]"
-                : "hover:text-[#203684]"
+              isActive ? "font-bold text-[#203684]" : "hover:text-[#203684]"
             }
           >
             Features
@@ -53,9 +49,7 @@ const Navbar = () => {
           <NavLink
             to="/pricing"
             className={({ isActive }) =>
-              isActive
-                ? "font-bold text-[#203684]"
-                : "hover:text-[#203684]"
+              isActive ? "font-bold text-[#203684]" : "hover:text-[#203684]"
             }
           >
             Pricing
@@ -64,23 +58,16 @@ const Navbar = () => {
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              isActive
-                ? "font-bold text-[#203684]"
-                : "hover:text-[#203684]"
+              isActive ? "font-bold text-[#203684]" : "hover:text-[#203684]"
             }
           >
             Contact
           </NavLink>
 
-          <Link to="/schoolrevs" className="hover:text-[#203684]">
-            SchoolRevs Suite
-          </Link>
+          <Link className="hover:text-[#203684]">SchoolRevs Suite</Link>
         </nav>
 
-        <Link
-          to="/signup"
-          className="hidden rounded-[5px] bg-[#203684] px-[30px] py-[15px] text-[16px] font-semibold text-white md:block"
-        >
+        <Link className="hidden rounded-[5px] bg-[#203684] px-[30px] py-[15px] text-[16px] font-semibold text-white md:block">
           Get Started
         </Link>
 
@@ -95,7 +82,6 @@ const Navbar = () => {
         </button>
       </div>
 
-     
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-50 md:hidden">
           <div
@@ -113,7 +99,6 @@ const Navbar = () => {
               </button>
             </div>
 
-           
             <nav className="flex flex-col font-normal">
               <NavLink
                 end

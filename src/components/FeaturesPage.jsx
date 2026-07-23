@@ -12,9 +12,9 @@ import interfaceCard from "../assets/Frame 2147228984.png";
 const FeaturesPage = () => {
   return (
     <div className="bg-white">
-      <main className="px-4 pt-6 pb-0 md:px-6 md:pt-[70px]">
+      <main className="px-4 pt-[50px] pb-0 md:px-6 md:pt-[70px]">
         <div className="mx-auto flex w-[327px] flex-col items-center gap-8 text-center md:h-[287px] md:w-[852px] md:gap-[24px]">
-          <div className="flex w-[302px] flex-col items-center gap-6 pb-[17px] md:h-[214px] md:w-[852px] md:gap-[16px] md:pb-0">
+          <div className="flex w-[302px] flex-col items-center gap-4 pb-[17px] md:h-[214px] md:w-[852px] md:gap-[16px] md:pb-0">
             <h1 className="w-[302px] text-[18px] font-bold leading-[130%] text-[#203684] md:h-[73px] md:w-[852px] md:text-[56px]">
               Innovative Solutions at its Best
             </h1>

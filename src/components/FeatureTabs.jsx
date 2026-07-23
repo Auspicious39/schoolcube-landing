@@ -75,7 +75,7 @@ const FeatureTabs = () => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab)}
-              className={`flex h-auto w-max flex-shrink-0 items-center justify-center gap-[10px] whitespace-nowrap rounded-[40px] px-[20px] py-[16px] text-[18px] font-medium transition-all duration-300 ${
+              className={`flex h-auto w-max flex-shrink-0 items-center justify-center gap-[10px] whitespace-nowrap rounded-[40px] px-[20px] py-[8px] md:py-[16px] text-[14px] md:text-[18px] font-medium transition-all duration-300 ${
                 activeTab.id === tab.id
                   ? "bg-[#339BFE] text-white"
                   : "bg-transparent text-[#5A5A5A] hover:text-[#203684]"
@@ -86,27 +86,25 @@ const FeatureTabs = () => {
           ))}
         </div>
 
-        
- 
-<div className="mx-auto flex w-full max-w-[327px] flex-col items-center gap-[48px] md:h-[264px] md:max-w-[892px] md:flex-row md:gap-[284px]">
-<div className="flex w-full max-w-[327px] flex-col gap-4 md:h-[170px] md:w-[358px] md:max-w-none md:gap-[16px]">
-  <h2 className="font-bold text-[24px] leading-[141%] text-[#203684] md:h-[42px] md:w-[297px] md:text-[30px]">
-    {activeTab.heading}
-  </h2>
+        <div className="mx-auto flex w-full max-w-[327px] flex-col items-center gap-[48px] md:h-[264px] md:max-w-[892px] md:flex-row md:gap-[284px]">
+          <div className="flex w-full max-w-[327px] flex-col gap-4 md:h-[170px] md:w-[358px] md:max-w-none md:gap-[16px]">
+            <h2 className="font-bold text-[16px] md:text-[24px] leading-[141%] text-[#203684] md:h-[42px] md:w-[297px] md:text-[30px]">
+              {activeTab.heading}
+            </h2>
 
-  <p className="text-[16px] font-normal leading-[155%] text-[#666666] md:h-[112px] md:w-[358px] md:text-[18px]">
-    {activeTab.description}
-  </p>
-</div>
+            <p className=" text-[14px] font-normal leading-[155%] text-[#666666] md:h-[112px] md:w-[358px] md:text-[18px]">
+              {activeTab.description}
+            </p>
+          </div>
 
-  <div className="flex w-full justify-center md:w-auto md:justify-end">
-  <img
-    src={activeTab.media}
-    alt={activeTab.title}
-    className="h-[223px] w-auto max-w-full object-contain md:h-[264px] md:w-[277px]"
-  />
-</div>
-</div>
+          <div className="flex w-full justify-center md:w-auto md:justify-end">
+            <img
+              src={activeTab.media}
+              alt={activeTab.title}
+              className="h-[223px] w-auto max-w-full object-contain md:h-[264px] md:w-[277px]"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
