@@ -1,57 +1,3 @@
-// import backgroundImage from "../assets/background-2.png";
-// import onboardingCard from "../assets/Frame 867.png";
-// import oneStopCard from "../assets/Frame 868-2.png";
-// import trainingCard from "../assets/Frame 2147228983.png";
-// import interfaceCard from "../assets/Frame 2147228984.png";
-
-// const cards = [onboardingCard, oneStopCard, trainingCard, interfaceCard];
-
-// const CARD_TOP_BASE = 180;  // where the first card pins
-// const CARD_TOP_STEP = 32;   // how much lower each next card pins (creates the peek/stack)
-
-// const WhyChooseUs = () => {
-//   return (
-//     <section className="relative">
-//       <div className="sticky top-0 h-screen overflow-hidden">
-//         <img
-//           src={backgroundImage}
-//           alt=""
-//           className="absolute inset-0 h-full w-full object-cover"
-//         />
-//         <div className="absolute inset-0 bg-black/30" />
-//         <div className="relative z-30 mx-auto flex max-w-[1200px] justify-between px-6 pt-16 text-white">
-//           <h2 className="w-[430px] text-[40px] font-bold leading-[130%]">
-//             Why Choose Us?
-//           </h2>
-//           <p className="w-[420px] text-[18px] leading-[155%]">
-//             Built with educators in mind, our platform makes managing students,
-//             staff and daily operations easier than ever.
-//           </p>
-//         </div>
-//       </div>
-
-//       <div className="relative z-40">
-//         {cards.map((card, index) => (
-//           <div key={index} className="relative h-[140vh]">
-//             <div
-//               className="sticky mx-auto max-w-[1149px] px-6"
-//               style={{ top: CARD_TOP_BASE + index * CARD_TOP_STEP, zIndex: index }}
-//             >
-//               <img
-//                 src={card}
-//                 alt=""
-//                 className="w-full rounded-[20px] shadow-2xl"
-//               />
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default WhyChooseUs;
-
 import backgroundImage from "../assets/background-2.png";
 import onboardingCard from "../assets/Frame 867.png";
 import oneStopCard from "../assets/Frame 868-2.png";
@@ -60,40 +6,44 @@ import interfaceCard from "../assets/Frame 2147228984.png";
 
 const cards = [onboardingCard, oneStopCard, trainingCard, interfaceCard];
 
-const CARD_TOP = 180; // fixed pin position — every card lands here, fully covering the last
-
 const WhyChooseUs = () => {
   return (
-    <section className="relative">
-      <div className="sticky top-0 h-screen overflow-hidden">
+    <section className="relative w-full bg-slate-900 font-['Plus_Jakarta_Sans',sans-serif]">
+      <div className="sticky top-0 z-0 h-[399px] md:h-screen w-full overflow-hidden">
         <img
           src={backgroundImage}
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/30" />
-        <div className="relative z-30 mx-auto flex max-w-[1200px] justify-between px-6 pt-16 text-white">
-          <h2 className="w-[430px] text-[40px] font-bold leading-[130%]">
+        <div className="absolute inset-0 bg-black/40" />
+
+        <div className="relative z-10 mx-auto flex w-[327px] h-[132px] pt-[36px] px-0 gap-[24px] text-white md:w-full md:max-w-[1200px] md:h-auto md:justify-between md:px-6 md:pt-16 md:gap-0">
+          <h2 className="w-[142px] h-[48px] text-[18px] font-bold leading-[136%] tracking-[0.2px] text-white md:w-[430px] md:h-auto md:text-[40px] md:leading-[130%] md:tracking-normal">
             Why Choose Us?
           </h2>
-          <p className="w-[420px] text-[18px] leading-[155%]">
+
+          <p className="w-[156px] h-[132px] text-[14px] font-normal leading-[155%] tracking-[0px] text-white md:w-[420px] md:h-auto md:text-[18px] md:text-slate-200">
             Built with educators in mind, our platform makes managing students,
             staff and daily operations easier than ever.
           </p>
         </div>
       </div>
 
-      <div className="relative z-40">
+      <div className="relative z-10 -mt-[180px] md:-mt-[calc(100vh-200px)] pb-[5vh] mx-auto max-w-[1149px] px-4 md:px-6">
         {cards.map((card, index) => (
-          <div key={index} className="relative h-[140vh]">
-            <div
-              className="sticky mx-auto max-w-[1149px] px-6"
-              style={{ top: `${CARD_TOP}px`, zIndex: index + 1 }}
-            >
+          <div
+            key={index}
+            className="sticky mb-8 md:mb-16"
+            style={{
+              top: `${140 + index * 16}px`,
+              zIndex: index + 1,
+            }}
+          >
+            <div className="overflow-hidden rounded-[16px] md:rounded-[24px] bg-white shadow-2xl transition-all duration-300">
               <img
                 src={card}
                 alt=""
-                className="block w-full rounded-[20px] shadow-2xl"
+                className="w-full h-auto block object-cover"
               />
             </div>
           </div>

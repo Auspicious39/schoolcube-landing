@@ -38,7 +38,7 @@ const Footer = () => {
 
           <div className="mb-10">
             <h3 className="mb-4 text-[18px] font-medium text-[#424242]">
-              Phone, 
+              Phone
             </h3>
 
             <p className="text-[14px] leading-8 text-[#424242]">
@@ -52,14 +52,14 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="mb-8 flex gap-10 text-[14px] font-semi-bold text-[#424242]">
+          <div className="mb-8 flex gap-10 text-[14px] font-bold text-[#424242]">
             <a href="/">Facebook</a>
             <a href="/">Instagram</a>
             <a href="/">Linkedin</a>
           </div>
 
           <div className="border-t border-[#e5e5e5] pt-6">
-            <p className="text-[14px] text-[#5f5f5f]">
+            <p className="text-[14px] text-[#5f5f5f] font-bold">
               Copyright © 2026 Revocube. All Rights Reserved
             </p>
           </div>
@@ -106,7 +106,7 @@ const Footer = () => {
           </div>
 
           <div className="mt-[76px] border-t border-[#e5e5e5] pt-7">
-            <div className="flex items-center justify-between text-[11px] text-[#424242]">
+            <div className="flex items-center justify-between text-[11px] text-[#424242] font-bold">
               <p>Copyright © 2026 Revocube. All Rights Reserved</p>
 
               <div className="flex gap-8 text-[#424242]">

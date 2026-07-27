@@ -9,10 +9,8 @@ const NeedsSection = () => {
         </h2>
 
         <p className="mx-auto mt-8 max-w-[302px] text-[14px] font-medium leading-[1.9] text-[#475467] md:mt-5 md:max-w-[584px] md:text-[18px] md:leading-6">
-          Streamline admissions, attendance,
-          communication, and academic records with
-          one easy to use platform designed for
-          modern schools.
+          Streamline admissions, attendance, communication, and academic records
+          with one easy to use platform designed for modern schools.
         </p>
 
         <div className="mt-14 flex justify-center gap-6 md:mt-8">

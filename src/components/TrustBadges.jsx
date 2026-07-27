@@ -20,7 +20,7 @@ const TrustBadges = () => {
         </div>
 
         <div className="flex h-[48px] w-fit items-center gap-2 rounded-full bg-[#f1f1f1] px-6 md:w-[348px] md:justify-center md:gap-3 md:px-5">
-          <TbShieldCheckeredFilled size={16} fill="#203684" color="white" />
+          <TbShieldCheckeredFilled size={24} fill="#203684" color="white" />
           <span className="text-[10px] font-medium text-[#282828] md:text-[14px]">
             Secure &amp; Compliant
           </span>
