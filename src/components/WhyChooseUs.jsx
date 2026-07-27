@@ -14,7 +14,7 @@ const cards = [
 const WhyChooseUs = () => {
   return (
     <section className="relative w-full h-[250vh] md:h-auto bg-[#EBEBEB] font-['Plus_Jakarta_Sans',sans-serif]">
-      <div className="sticky top-0 z-0 h-[399px] md:h-screen w-full overflow-hidden">
+      <div className="sticky top-0 z-0 h-[399px] md:h-screen w-full overflow-hidden flex flex-col">
         <img
           src={backgroundImage}
           alt=""
@@ -34,24 +34,32 @@ const WhyChooseUs = () => {
         </div>
       </div>
 
-      <div className="relative z-10 -mt-[220px] md:-mt-[calc(100vh-200px)] pb-0 md:pb-[5vh] mx-auto max-w-[1149px] px-4 md:px-6">
+      <div className="relative z-10 -mt-[220px] md:-mt-[calc(100vh-220px)] mx-auto max-w-[1149px] px-4 pb-0 md:px-6 md:pb-[15vh]">
         {cards.map((card, index) => (
           <div
             key={index}
-            className="sticky pb-[40vh] md:pb-0 md:mb-16"
+            className="sticky pb-[40vh] md:pb-0 md:mb-20"
             style={{
-              top:
-                typeof window !== "undefined" && window.innerWidth >= 768
-                  ? `${140 + index * 16}px`
-                  : `calc(178px + ${index * 8}px)`,
+              top: `var(--top-offset-${index})`,
               zIndex: index + 1,
             }}
           >
+            <style jsx>{`
+              :root {
+                --top-offset-${index}: calc(178px + ${index * 8}px);
+              }
+              @media (min-width: 768px) {
+                :root {
+                  --top-offset-${index}: calc(220px + ${index * 16}px);
+                }
+              }
+            `}</style>
+
             <div className="overflow-hidden rounded-[16px] md:rounded-[24px] bg-white shadow-2xl transition-all duration-300">
               <img
                 src={card.src}
                 alt={card.alt || ""}
-                className="w-full h-auto block object-cover"
+                className="block h-auto w-full object-cover"
               />
             </div>
           </div>
