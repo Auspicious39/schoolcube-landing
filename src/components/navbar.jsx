@@ -95,7 +95,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+     
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-50 md:hidden">
           <div
