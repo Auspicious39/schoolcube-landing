@@ -46,34 +46,34 @@ const benefits = [
 
 const KeyBenefits = () => {
   return (
-    <section className="bg-white py-[100px]">
+    <section className="bg-white py-10 md:py-[100px]">
       <div className="mx-auto max-w-[1200px]">
-        <div className="mb-[90px] grid gap-8 md:grid-cols-2">
-          <h2 className="text-[42px] font-extrabold text-[#203684]">
+        <div className="mb-8 grid grid-cols-2 gap-5 md:mb-[90px] md:gap-8">
+          <h2 className="text-[15px] font-extrabold text-[#203684] md:text-[42px]">
             Key Benefits
           </h2>
 
-          <p className="max-w-[438px] text-[13px] font-medium leading-6 text-[#4b5568] md:ml-auto">
+          <p className="max-w-[438px] text-[7px] font-medium leading-3 text-[#4b5568] md:ml-auto md:text-[13px] md:leading-6">
             Discover the advantages that help schools operate more efficiently,
             save time, and deliver a better learning experience.
           </p>
         </div>
 
-        <div className="mx-auto grid max-w-[922px] gap-[74px_52px] md:grid-cols-2">
+        <div className="mx-auto grid max-w-[260px] gap-5 md:max-w-[922px] md:gap-[74px_52px] md:grid-cols-2">
           {benefits.map((benefit) => (
             <article
               key={benefit.title}
-              className="min-h-[396px] rounded-[10px] bg-[#f4f4f4] p-[29px]"
+              className="min-h-[258px] rounded-[7px] bg-[#f4f4f4] p-4 md:min-h-[396px] md:rounded-[10px] md:p-[29px]"
             >
-              <h3 className="mb-3 text-[17px] font-extrabold text-[#333333]">
+              <h3 className="mb-2 text-[10px] font-extrabold text-[#333333] md:mb-3 md:text-[17px]">
                 {benefit.title}
               </h3>
 
-              <p className="mb-7 min-h-[70px] text-[13px] leading-5 text-[#777777]">
+              <p className="mb-4 min-h-[36px] text-[7px] leading-3 text-[#777777] md:mb-7 md:min-h-[70px] md:text-[13px] md:leading-5">
                 {benefit.text}
               </p>
 
-              <div className="flex h-[193px] items-center justify-center rounded-[6px] bg-white p-4">
+              <div className="flex h-[150px] items-center justify-center rounded-[5px] bg-white p-3 md:h-[193px] md:rounded-[6px] md:p-4">
                 <img
                   src={benefit.image}
                   alt={benefit.alt}
