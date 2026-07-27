@@ -59,7 +59,7 @@ const KeyBenefits = () => {
           </p>
         </div>
 
-        <div className="mx-auto grid w-full max-w-[327px] grid-cols-1 gap-12 md:max-w-none md:grid-cols-2 md:gap-x-[52px] md:gap-y-[74px]">
+        <div className="mx-auto grid w-full max-w-[327px] grid-cols-1 gap-12 md:max-w-[922px] md:grid-cols-2 md:gap-x-[52px] md:gap-y-[74px]">
           {benefits.map((benefit) => (
             <article
               key={benefit.title}
@@ -73,11 +73,11 @@ const KeyBenefits = () => {
                 {benefit.text}
               </p>
 
-              <div className="mt-6 flex h-[180px] items-center justify-center rounded-[14px] bg-white p-4 md:h-[193px] md:rounded-[12px] md:p-4">
+              <div className="mt-6 flex h-[180px] items-center justify-center rounded-[14px]  p-4 md:h-[193px] md:rounded-[12px] md:p-4">
                 <img
                   src={benefit.image}
                   alt={benefit.alt}
-                  className="max-h-full max-w-full object-contain"
+                  className="max-h-full w-[376px] object-contain"
                 />
               </div>
             </article>
