@@ -4,11 +4,16 @@ import oneStopCard from "../assets/Frame 868-2.png";
 import trainingCard from "../assets/Frame 2147228983.png";
 import interfaceCard from "../assets/Frame 2147228984.png";
 
-const cards = [onboardingCard, oneStopCard, trainingCard, interfaceCard];
+const cards = [
+  { src: onboardingCard, alt: "Seamless Onboarding" },
+  { src: oneStopCard, alt: "Instant Portal Setup" },
+  { src: trainingCard, alt: "Free Training" },
+  { src: interfaceCard, alt: "Custom Interface" },
+];
 
 const WhyChooseUs = () => {
   return (
-    <section className="relative w-full bg-slate-900 font-['Plus_Jakarta_Sans',sans-serif]">
+    <section className="relative w-full h-[250vh] md:h-auto bg-[#EBEBEB] font-['Plus_Jakarta_Sans',sans-serif]">
       <div className="sticky top-0 z-0 h-[399px] md:h-screen w-full overflow-hidden">
         <img
           src={backgroundImage}
@@ -29,20 +34,23 @@ const WhyChooseUs = () => {
         </div>
       </div>
 
-      <div className="relative z-10 -mt-[180px] md:-mt-[calc(100vh-200px)] pb-[5vh] mx-auto max-w-[1149px] px-4 md:px-6">
+      <div className="relative z-10 -mt-[220px] md:-mt-[calc(100vh-200px)] pb-0 md:pb-[5vh] mx-auto max-w-[1149px] px-4 md:px-6">
         {cards.map((card, index) => (
           <div
             key={index}
-            className="sticky mb-8 md:mb-16"
+            className="sticky pb-[40vh] md:pb-0 md:mb-16"
             style={{
-              top: `${140 + index * 16}px`,
+              top:
+                typeof window !== "undefined" && window.innerWidth >= 768
+                  ? `${140 + index * 16}px`
+                  : `calc(178px + ${index * 8}px)`,
               zIndex: index + 1,
             }}
           >
             <div className="overflow-hidden rounded-[16px] md:rounded-[24px] bg-white shadow-2xl transition-all duration-300">
               <img
-                src={card}
-                alt=""
+                src={card.src}
+                alt={card.alt || ""}
                 className="w-full h-auto block object-cover"
               />
             </div>
