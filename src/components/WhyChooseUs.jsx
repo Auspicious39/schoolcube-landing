@@ -18,7 +18,7 @@ const WhyChooseUs = () => {
         <img
           src={backgroundImage}
           alt=""
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0  w-full object-cover"
         />
         <div className="absolute inset-0 bg-black/40" />
 
