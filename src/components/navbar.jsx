@@ -16,7 +16,7 @@ const Navbar = () => {
     }`;
 
   return (
-    <header className="relative z-40 bg-white px-4 py-2 md:px-6 md:py-[35px]">
+    <header className="sticky top-0 z-50 bg-white px-4 py-2 md:px-3 md:py-[15px]">
       <div className="mx-auto flex h-11 max-w-[1209px] items-center justify-between md:h-[67px]">
         <Link to="/">
           <img
