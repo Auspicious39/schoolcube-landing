@@ -26,7 +26,7 @@ const Navbar = () => {
           />
         </Link>
 
-        <nav className="hidden items-center gap-8 text-[13px] font-medium text-[#4b5568] md:flex">
+        <nav className="hidden items-center gap-6 lg:gap-8 text-[13px] font-medium text-[#4b5568] lg:flex">
           <NavLink
             end
             to="/"
@@ -64,10 +64,12 @@ const Navbar = () => {
             Contact
           </NavLink>
 
-          <Link className="hover:text-[#203684]">SchoolRevs Suite</Link>
+          <Link className="hover:text-[#203684] whitespace-nowrap">
+            SchoolRevs Suite
+          </Link>
         </nav>
 
-        <Link className="hidden rounded-[5px] bg-[#203684] px-[30px] py-[15px] text-[16px] font-semibold text-white md:block">
+        <Link className="hidden rounded-[5px] bg-[#203684] px-[30px] py-[15px] text-[16px] font-semibold text-white lg:block">
           Get Started
         </Link>
 
@@ -76,20 +78,20 @@ const Navbar = () => {
           aria-label="Open navigation menu"
           aria-expanded={mobileMenuOpen}
           onClick={() => setMobileMenuOpen(true)}
-          className="flex h-[40px] w-[40px] items-center justify-center rounded-md text-[#203684] md:hidden"
+          className="flex h-[40px] w-[40px] items-center justify-center rounded-md text-[#203684] lg:hidden"
         >
           <Menu size={24} strokeWidth={2} />
         </button>
       </div>
 
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 md:hidden">
+        <div className="fixed inset-0 z-50 lg:hidden">
           <div
             className="absolute inset-0 bg-black/20"
             onClick={closeMobileMenu}
           />
 
-          <div className="absolute right-0 top-0 h-screen w-full bg-white px-[32px] py-[28px] shadow-xl">
+          <div className="absolute right-0 top-0 h-dvh w-full bg-white px-[32px] py-[28px] shadow-xl overflow-y-auto">
             <div className="mb-10 flex justify-end">
               <button
                 onClick={closeMobileMenu}
@@ -124,14 +126,6 @@ const Navbar = () => {
               >
                 Pricing
               </NavLink>
-
-              <Link
-                to="/blog"
-                onClick={closeMobileMenu}
-                className="mb-[20px] text-[18px] text-[#000000] transition-all duration-200 hover:text-[#203684] hover:underline hover:decoration-2 hover:underline-offset-8"
-              >
-                Blog
-              </Link>
 
               <NavLink
                 to="/contact"

@@ -33,7 +33,7 @@ const plans = [
 
 export default function PricingPage() {
   return (
-    <main className="bg-white px-6 pb-[105px] pt-[46px]">
+    <main className="bg-white px-4 pb-16 pt-8 md:px-6 md:pb-[105px] md:pt-[46px]">
       <section className="mx-auto max-w-[1200px]">
         <div className="mx-auto max-w-[846px] text-center">
           <h1 className="text-[28px] font-bold leading-[1.3] tracking-[0.4px] text-[#203684] md:text-[56px]">
@@ -46,7 +46,7 @@ export default function PricingPage() {
           </p>
         </div>
 
-        <div className="mt-[80px] overflow-x-auto">
+        <div className="mt-12 md:mt-[80px] overflow-x-auto">
           <div className="min-w-[1180px] relative">
             <div className="grid grid-cols-[300px_repeat(4,1fr)] gap-4 items-end">
               <div />
@@ -91,7 +91,7 @@ export default function PricingPage() {
                       rowIndex % 2 === 0 ? "bg-[#F3F9FF]" : "bg-white"
                     }`}
                   >
-                    <div className="flex min-h-[44px] items-center px-4 text-[12px] font-medium text-[#475467]">
+                    <div className="sticky left-0 z-30 flex min-h-[44px] items-center bg-inherit px-4 text-[12px] font-medium text-[#475467]">
                       {feature}
                     </div>
 

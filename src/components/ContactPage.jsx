@@ -28,7 +28,7 @@ export default function ContactPage() {
           <img
             src={rightPattern}
             alt=""
-            className="pointer-events-none absolute top-0 right-2 w-[42px] opacity-35 md:left-[1100px] md:top-[139px] md:h-[61px] md:w-[59px] md:right-auto"
+            className="pointer-events-none absolute top-0 right-2 w-[42px] opacity-35 md:right-[-24px] md:top-[139px] md:h-[61px] md:w-[59px]"
           />
 
           <form

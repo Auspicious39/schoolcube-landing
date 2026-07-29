@@ -22,12 +22,12 @@ const WhyChooseUs = () => {
         />
         <div className="absolute inset-0 bg-black/40" />
 
-        <div className="relative z-10 mx-auto flex w-[327px] h-[132px] pt-[36px] px-0 gap-[24px] text-white md:w-full md:max-w-[1200px] md:h-auto md:justify-between md:px-6 md:pt-16 md:gap-0">
-          <h2 className="w-[142px] h-[48px] text-[18px] font-bold leading-[136%] tracking-[0.2px] text-white md:w-[430px] md:h-auto md:text-[40px] md:leading-[130%] md:tracking-normal">
+        <div className="relative z-10 mx-auto flex w-full max-w-[327px] pt-9 px-4 gap-3 sm:gap-5 text-white md:max-w-[1200px] md:justify-between md:px-6 md:pt-16 md:gap-8">
+          <h2 className="flex-1 min-w-0 text-lg font-bold leading-[136%] tracking-[0.2px] text-white md:max-w-[430px] md:text-4xl md:leading-[130%] md:tracking-normal">
             Why Choose Us?
           </h2>
 
-          <p className="w-[156px] h-[132px] text-[14px] font-normal leading-[155%] tracking-[0px] text-white md:w-[420px] md:h-auto md:text-[18px] md:text-slate-200">
+          <p className="flex-1 min-w-0 text-xs sm:text-sm font-normal leading-[155%] tracking-[0px] text-white md:max-w-[420px] md:text-lg md:text-slate-200">
             Built with educators in mind, our platform makes managing students,
             staff and daily operations easier than ever.
           </p>
@@ -38,23 +38,13 @@ const WhyChooseUs = () => {
         {cards.map((card, index) => (
           <div
             key={index}
-            className="sticky pb-[40vh] md:pb-0 md:mb-20"
+            className="sticky pb-[40vh] md:pb-0 md:mb-20 top-[var(--mobile-top)] md:top-[var(--desktop-top)]"
             style={{
-              top: `var(--top-offset-${index})`,
+              "--mobile-top": `${178 + index * 8}px`,
+              "--desktop-top": `${220 + index * 16}px`,
               zIndex: index + 1,
             }}
           >
-            <style jsx>{`
-              :root {
-                --top-offset-${index}: calc(178px + ${index * 8}px);
-              }
-              @media (min-width: 768px) {
-                :root {
-                  --top-offset-${index}: calc(220px + ${index * 16}px);
-                }
-              }
-            `}</style>
-
             <div className="overflow-hidden rounded-[16px] md:rounded-[24px] bg-white shadow-2xl transition-all duration-300">
               <img
                 src={card.src}

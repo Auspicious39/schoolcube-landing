@@ -4,13 +4,8 @@ const Footer = () => {
   return (
     <footer className="bg-white px-4 pb-8 pt-10 md:px-6 md:pb-[87px] md:pt-[79px]">
       <div className="mx-auto max-w-[1200px]">
-
         <div className="md:hidden">
-          <img
-            src={logo}
-            alt="Schoolcube"
-            className="mb-10 w-[100px]"
-          />
+          <img src={logo} alt="Schoolcube" className="mb-10 w-[100px]" />
 
           <div className="mb-8">
             <h3 className="mb-4 text-[16px] font-medium text-[#424242]">
@@ -65,7 +60,6 @@ const Footer = () => {
           </div>
         </div>
 
-
         <div className="hidden md:block">
           <div className="grid gap-5 md:gap-12 md:grid-cols-[1.6fr_0.55fr_0.7fr_0.7fr]">
             <img src={logo} alt="Schoolcube" className="w-[195px]" />
@@ -117,7 +111,6 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
       </div>
     </footer>
   );
