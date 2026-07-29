@@ -13,12 +13,13 @@ const cards = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="relative w-full h-[250vh] md:h-auto bg-[#EBEBEB] font-['Plus_Jakarta_Sans',sans-serif]">
+    /* Reduced h-[250vh] to h-[180vh] for mobile so scrolling matches the tighter gap */
+    <section className="relative w-full h-[180vh] md:h-auto bg-[#EBEBEB] font-['Plus_Jakarta_Sans',sans-serif]">
       <div className="sticky top-0 z-0 h-[399px] md:h-screen w-full overflow-hidden flex flex-col">
         <img
           src={backgroundImage}
           alt=""
-          className="absolute inset-0  w-full object-cover"
+          className="absolute inset-0 w-full object-cover"
         />
         <div className="absolute inset-0 bg-black/40" />
 
@@ -34,13 +35,14 @@ const WhyChooseUs = () => {
         </div>
       </div>
 
-      <div className="relative z-10 -mt-[220px] md:-mt-[calc(100vh-220px)] mx-auto max-w-[1149px] px-4 pb-0 md:px-6 md:pb-[15vh]">
+      <div className="relative z-10 -mt-[220px] md:-mt-[calc(100vh-220px)] mx-auto max-w-[1149px] px-4 pb-12 md:px-6 md:pb-[15vh]">
         {cards.map((card, index) => (
           <div
             key={index}
-            className="sticky pb-[40vh] md:pb-0 md:mb-20 top-[var(--mobile-top)] md:top-[var(--desktop-top)]"
+            /* CHANGED: Reduced pb-[40vh] to pb-[12vh] on mobile so cards scroll closer together */
+            className="sticky pb-[12vh] md:pb-0 md:mb-20 top-[var(--mobile-top)] md:top-[var(--desktop-top)]"
             style={{
-              "--mobile-top": `${178 + index * 8}px`,
+              "--mobile-top": `${178 + index * 12}px`,
               "--desktop-top": `${220 + index * 16}px`,
               zIndex: index + 1,
             }}
