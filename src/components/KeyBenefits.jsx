@@ -1,4 +1,5 @@
-import attendanceImage from "../assets/attendance.png";
+import { motion, useReducedMotion } from "framer-motion";
+import attendanceImage from "../assets/update.png";
 import analysisImage from "../assets/analysis.png";
 import managementImage from "../assets/management.png";
 import costImage from "../assets/cost.png";
@@ -8,83 +9,124 @@ import backupImage from "../assets/backup.png";
 const benefits = [
   {
     title: "Up to date Information",
-    text: "We take pride in collecting and analyzing complete and accurate data on students, staff, and parents.",
+    description:
+      "We take pride in collecting and analyzing complete and accurate data on students, staff, and parents.",
     image: attendanceImage,
-    alt: "Attendance information",
   },
   {
     title: "Data Analysis",
-    text: "Schoolcube.net provides clear reports and data analysis through the use of tables and charts.",
+    description:
+      "Schoolcube.net provides clear reports and data analysis through the use of tables and charts.",
     image: analysisImage,
-    alt: "Data analysis chart",
   },
   {
     title: "Easy & Effective Management",
-    text: "Schoolcube.net is intuitive, clear and easy to use. It provides 24/7 system stability and reliability.",
+    description:
+      "Schoolcube.net is intuitive, clear and easy to use. It provides 24/7 system stability and reliability.",
     image: managementImage,
-    alt: "System uptime",
   },
   {
     title: "Cost Effective",
-    text: "Schoolcube packages come at almost no cost to its users.",
+    description: "Schoolcube packages come at almost no cost to its users.",
     image: costImage,
-    alt: "Cost comparison",
   },
   {
     title: "Security",
-    text: "All data on Schoolcube.net is protected by high-profile security.",
+    description:
+      "All data on Schoolcube.net is protected by high-profile security.",
     image: securityImage,
-    alt: "Data encryption",
   },
   {
     title: "Data Backup",
-    text: "Data is backed up automatically on a daily, weekly and monthly basis.",
+    description:
+      "Data is backed up automatically on a daily, weekly and monthly basis.",
     image: backupImage,
-    alt: "Backup storage",
   },
 ];
 
 const KeyBenefits = () => {
+  const shouldReduceMotion = useReducedMotion();
+  const slideDistance = shouldReduceMotion ? 0 : 24;
+
+  const reveal = {
+    hidden: { opacity: 0, y: slideDistance },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: shouldReduceMotion ? 0.01 : 0.55,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  };
+
   return (
-    <section className="bg-white py-16 md:py-[100px] px-4 sm:px-6 mx-auto max-w-[1200px]">
-      <div className="flex flex-col gap-12 md:gap-[130px]">
-        {/* Header */}
-        <div className="mx-auto flex w-full flex-row items-start justify-between gap-3 sm:gap-5 md:gap-8">
-          <h2 className="flex-1 min-w-0 text-lg sm:text-xl md:text-4xl font-bold leading-[136%] md:leading-[130%] tracking-[0.2px] md:tracking-normal text-[#203684] md:max-w-[438px] font-['Plus_Jakarta_Sans',sans-serif]">
+    <section className="mx-auto w-full max-w-[1200px] bg-white px-2 pb-[71px] pt-0 sm:px-3 sm:pb-20 md:px-0 md:py-[100px]">
+      <div className="flex flex-col gap-[58px] md:gap-20">
+        <motion.div
+          className="flex w-full flex-col items-start gap-6 md:gap-7"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={reveal}
+        >
+          <h2 className="font-[Plus_Jakarta_Sans] text-[18px] font-bold leading-[136%] tracking-[0.2px] text-[#203684] md:text-[40px] md:leading-[130%] md:tracking-normal">
             Key Benefits
           </h2>
-
-          <p className="flex-1 min-w-0 text-xs sm:text-sm md:text-lg font-normal md:font-medium leading-[155%] tracking-[0px] text-[#475467] md:max-w-[438px] font-['Plus_Jakarta_Sans',sans-serif]">
+          <p className="max-w-[676px] font-[Plus_Jakarta_Sans] text-sm font-medium leading-[155%] text-[#475467] md:text-[18px] md:leading-[155%]">
             Discover the advantages that help schools operate more efficiently,
             save time, and deliver a better learning experience.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Cards */}
-        <div className="mx-auto grid w-full grid-cols-1 gap-12 md:max-w-[922px] md:grid-cols-2 md:gap-x-[52px] md:gap-y-[74px]">
+        <motion.div
+          className="grid w-full grid-cols-1 gap-12 md:grid-cols-2 md:gap-x-[52px] md:gap-y-[74px]"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.12 }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: shouldReduceMotion ? 0 : 0.1,
+              },
+            },
+          }}
+        >
           {benefits.map((benefit) => (
-            <article
+            <motion.article
               key={benefit.title}
-              className="min-h-[396px] rounded-[20px] bg-[#f4f4f4] p-5 md:p-[29px]"
+              className="group h-[396px] overflow-hidden rounded-[22px] bg-[#F6F6F6] px-[17px] py-[33px] md:px-[28px] md:py-[29px]"
+              variants={reveal}
+              whileHover={
+                shouldReduceMotion
+                  ? undefined
+                  : {
+                      y: -6,
+                      boxShadow: "0 18px 36px rgba(32, 54, 132, 0.12)",
+                    }
+              }
+              whileTap={shouldReduceMotion ? undefined : { scale: 0.99 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
             >
-              <h3 className="mb-3 text-base font-extrabold text-[#333333] md:text-[17px]">
-                {benefit.title}
-              </h3>
-
-              <p className="mb-6 text-sm leading-7 text-[#777777] md:mb-7 md:min-h-[70px] md:text-[13px] md:leading-5">
-                {benefit.text}
-              </p>
-
-              <div className="mt-6 flex h-[180px] items-center justify-center overflow-hidden rounded-[14px] p-4 md:h-[193px] md:rounded-[12px]">
+              <div className="min-h-[111px] md:min-h-[118px]">
+                <h3 className="font-[Plus_Jakarta_Sans] text-[18px] font-semibold leading-[130%] text-[rgba(0,0,0,0.8)] md:text-[20px]">
+                  {benefit.title}
+                </h3>
+                <p className="mt-3 font-[Plus_Jakarta_Sans] text-sm font-normal leading-[155%] text-[#666] md:text-base md:leading-[170%]">
+                  {benefit.description}
+                </p>
+              </div>
+              <div className="mt-[25px] flex h-[193px] items-center justify-center overflow-hidden rounded-[11px] bg-white p-3">
                 <img
                   src={benefit.image}
-                  alt={benefit.alt}
-                  className="h-full w-full rounded-[8px] object-cover"
+                  alt=""
+                  className="h-full w-full object-fill transition-transform duration-500 ease-out motion-reduce:transform-none group-hover:scale-[1.025]"
                 />
               </div>
-            </article>
+            </motion.article>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

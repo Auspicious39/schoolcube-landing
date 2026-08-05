@@ -68,9 +68,9 @@ const FeatureTabs = () => {
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
   return (
-    <section className="overflow-hidden bg-white px-4 sm:px-6 py-16 md:py-24">
+    <section className="overflow-hidden bg-white px-4 py-16 sm:px-6 md:px-0 md:pt-[76px] md:pb-[111px]">
       <div className="mx-auto max-w-[1200px]">
-        <div className="mx-auto mb-10 md:mb-16 flex w-full max-w-full items-center gap-2 sm:gap-3 overflow-x-auto scrollbar-hide md:flex-wrap md:justify-center md:gap-4">
+        <div className="mx-auto mb-10 flex w-full max-w-full items-center gap-2 overflow-x-auto rounded-[40px] border border-black/15 p-3 scrollbar-hide sm:gap-3 md:mb-[111px] md:max-w-[892px] md:flex-nowrap md:justify-between md:gap-0">
           {tabs.map((tab) => (
             <button
               key={tab.id}
@@ -78,7 +78,7 @@ const FeatureTabs = () => {
               className={`flex h-auto w-max flex-shrink-0 items-center justify-center gap-[10px] whitespace-nowrap rounded-[40px] px-4 sm:px-5 py-2 md:py-4 text-sm md:text-lg font-medium transition-all duration-300 ${
                 activeTab.id === tab.id
                   ? "bg-[#339BFE] text-white"
-                  : "bg-transparent text-[#5A5A5A] hover:text-[#203684]"
+                  : "bg-[#339BFE]/8 text-[#666]"
               }`}
             >
               {tab.title}
@@ -86,9 +86,9 @@ const FeatureTabs = () => {
           ))}
         </div>
 
-        <div className="mx-auto flex w-full flex-col items-center gap-10 md:flex-row md:items-center md:justify-between md:gap-10 lg:gap-16">
+        <div className="mx-auto flex w-full max-w-[892px] flex-col items-center gap-10 md:flex-row md:items-start md:justify-between md:gap-[284px]">
           <div className="flex w-full flex-col gap-4 md:max-w-[358px] md:flex-shrink-0">
-            <h2 className="text-lg sm:text-xl md:text-3xl font-bold leading-[141%] text-[#203684]">
+            <h2 className="text-lg font-bold leading-[141%] text-black sm:text-xl md:text-[30px]">
               {activeTab.heading}
             </h2>
 

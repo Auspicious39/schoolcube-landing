@@ -31,93 +31,152 @@ const plans = [
   { name: "Schoolcube Enterprise", price: "₦5000", included: features.length },
 ];
 
+const planDescription =
+  "Uncover insights fast in video calls, support tickets, docs, and more.";
+
 export default function PricingPage() {
   return (
-    <main className="bg-white px-4 pb-16 pt-8 md:px-6 md:pb-[105px] md:pt-[46px]">
+    <main className="bg-white px-4 pb-16 pt-[123px] md:px-6 md:pb-[39px] md:pt-[88px]">
       <section className="mx-auto max-w-[1200px]">
-        <div className="mx-auto max-w-[846px] text-center">
-          <h1 className="text-[28px] font-bold leading-[1.3] tracking-[0.4px] text-[#203684] md:text-[56px]">
+        <div className="mx-auto max-w-[846px] pb-[17px] text-center lg:pb-0">
+          <h1 className="text-[18px] font-bold leading-[1.3] text-[#203684] md:text-[40px] lg:text-[56px] lg:leading-[1.39] lg:tracking-[0.4px]">
             Pricing that Suits You
           </h1>
-          <p className="mt-[19px] text-[16px] leading-[1.7] tracking-[0.3px] text-[#475467] md:text-[20px]">
+          <p className="mx-auto mt-3 max-w-[302px] text-[14px] font-medium leading-[1.55] text-[#475467] md:max-w-[680px] md:text-[18px] lg:mt-[19px] lg:max-w-[846px] lg:text-[20px] lg:leading-[1.7] lg:tracking-[0.3px] lg:text-[#47505b]">
             Our subscriptions come with flexible and convenient packages for
             various school needs. Subscribe to either Schoolbolt or SchoolPro
             plan to experience our amazing service.
           </p>
         </div>
 
-        <div className="mt-12 md:mt-[80px] overflow-x-auto">
-          <div className="min-w-[1180px] relative">
-            <div className="grid grid-cols-[300px_repeat(4,1fr)] gap-4 items-end">
-              <div />
+        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:hidden">
+          {plans.map((plan) => (
+            <article
+              key={plan.name}
+              className="overflow-hidden rounded-[8px] border border-[#eaebf0] bg-white p-5"
+            >
+              <div className="flex flex-col gap-[14px]">
+                <h2 className="text-[18px] font-bold leading-normal text-[#203684]">
+                  {plan.name}
+                </h2>
+                <p className="text-[14px] font-medium leading-6 text-[#5d5262]">
+                  {planDescription}
+                </p>
+                <div className="flex flex-col gap-2">
+                  <p className="text-[24px] font-bold leading-normal text-[#203684]">
+                    {plan.price}
+                  </p>
+                  <p className="text-xs leading-normal text-[#47505b]">
+                    Per student per term
+                  </p>
+                </div>
+                <button className="w-full rounded-[5px] bg-[#339bfe] px-[37px] py-3 text-[14px] font-medium leading-[1.2] text-white transition hover:bg-[#203684]">
+                  Get Started
+                </button>
+              </div>
+              <ul className="mt-8 flex flex-col gap-4 border-t border-[#eaebf0] py-8">
+                <li className="flex items-center gap-2 text-base font-bold leading-6 text-[#475467]">
+                  <Check size={24} strokeWidth={2} className="text-[#339bfe]" />
+                  Features
+                </li>
+                {features.slice(0, plan.included).map((feature) => (
+                  <li
+                    key={feature}
+                    className="flex items-start gap-2 text-[14px] leading-[1.4] tracking-[0.14px] text-[#47505b]"
+                  >
+                    <Check
+                      size={24}
+                      strokeWidth={2}
+                      className="shrink-0 text-[#339bfe]"
+                      aria-hidden="true"
+                    />
+                    <span className="pt-[2px]">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
 
+        <div className="mt-[154px] hidden grid-cols-4 gap-6 lg:grid">
+          {plans.map((plan) => (
+            <article
+              key={plan.name}
+              className="flex h-[346px] flex-col rounded-[8px] border border-[#eaebf0] bg-[#fefeff] p-6"
+            >
+              <div className="flex flex-1 flex-col gap-[14px] py-8">
+                <h2 className="text-[20px] font-bold leading-6 text-[#203684]">
+                  {plan.name}
+                </h2>
+                <p className="text-[16px] font-medium leading-6 text-[#47505b]">
+                  {planDescription}
+                </p>
+                <p className="mt-auto text-[48px] font-extrabold leading-none text-[#203684]">
+                  {plan.price}
+                </p>
+              </div>
+              <button className="h-8 w-full rounded-[5px] bg-[#339bfe] px-5 text-[14px] font-normal text-white transition hover:bg-[#203684]">
+                Get Started
+              </button>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-[64px] hidden overflow-x-auto pb-2 lg:block">
+          <div className="min-w-[1200px]">
+            <div className="grid grid-cols-[216px_repeat(4,216px)] gap-[30px] pb-8">
+              <div />
               {plans.map((plan) => (
                 <div
                   key={plan.name}
-                  className="rounded-t-[16px] border border-b-0 border-[#D8E5F3] bg-white p-6 text-left"
+                  className="rounded-[20px] border border-[#dae4f2] bg-white p-6"
                 >
-                  <p className="text-[13px] font-semibold text-[#203684]">
+                  <p className="text-[14px] font-medium leading-normal text-[#203684]">
                     {plan.name}
                   </p>
-                  <h3 className="mt-2 text-[32px] font-bold text-[#203684]">
+                  <p className="mt-2 text-[24px] font-bold leading-normal text-[#203684]">
                     {plan.price}
-                  </h3>
-                  <p className="mt-2 text-[11px] text-[#667085]">
+                  </p>
+                  <p className="mt-2 text-[12px] leading-normal text-[#47505b]">
                     Per student per term
                   </p>
-                  <button className="mt-5 h-[38px] w-full rounded-[8px] bg-[#339BFE] text-[13px] font-medium text-white transition hover:bg-[#203684]">
-                    Get Started
-                  </button>
                 </div>
               ))}
             </div>
 
-            <div className="relative">
-              <div className="absolute inset-0 grid grid-cols-[300px_repeat(4,1fr)] gap-4 pointer-events-none z-10">
-                <div />
-                {plans.map((plan) => (
-                  <div
-                    key={`bg-${plan.name}`}
-                    className="border border-t-0 border-[#D8E5F3] rounded-b-[16px]"
-                  />
-                ))}
-              </div>
-
-              <div className="overflow-hidden rounded-[16px]">
-                {features.map((feature, rowIndex) => (
-                  <div
-                    key={feature}
-                    className={`grid grid-cols-[300px_repeat(4,1fr)] gap-4 items-center ${
-                      rowIndex % 2 === 0 ? "bg-[#F3F9FF]" : "bg-white"
-                    }`}
-                  >
-                    <div className="sticky left-0 z-30 flex min-h-[44px] items-center bg-inherit px-4 text-[12px] font-medium text-[#475467]">
-                      {feature}
-                    </div>
-
-                    {plans.map((plan) => (
+            <div className="grid grid-cols-[216px_repeat(4,216px)] gap-x-[30px]">
+              {features.map((feature, rowIndex) => (
+                <div key={feature} className="contents">
+                  <div className="flex min-h-16 items-center text-[12px] leading-[1.3] text-[#47505b]">
+                    {feature}
+                  </div>
+                  {plans.map((plan) => {
+                    const included = rowIndex < plan.included;
+                    return (
                       <div
-                        key={plan.name + feature}
-                        className="flex min-h-[44px] items-center justify-center z-20"
+                        key={plan.name}
+                        className="flex min-h-16 items-center justify-center"
                       >
-                        {rowIndex < plan.included ? (
+                        {included ? (
                           <Check
-                            size={18}
-                            strokeWidth={2.5}
-                            className="text-[#344054]"
+                            size={16}
+                            strokeWidth={2}
+                            className="text-[#47505b]"
+                            aria-label="Included"
                           />
                         ) : (
                           <X
-                            size={18}
+                            size={16}
                             strokeWidth={2}
-                            className="text-[#D0D5DD]"
+                            className="text-[#dae4f2]"
+                            aria-label="Not included"
                           />
                         )}
                       </div>
-                    ))}
-                  </div>
-                ))}
-              </div>
+                    );
+                  })}
+                </div>
+              ))}
             </div>
           </div>
         </div>

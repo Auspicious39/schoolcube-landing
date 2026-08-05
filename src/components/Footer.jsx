@@ -2,17 +2,17 @@ import logo from "../assets/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-white px-4 pb-8 pt-10 md:px-6 md:pb-[87px] md:pt-[79px]">
+    <footer className="relative bg-[#F0F8FF] px-4 pb-8 pt-10 md:h-[469px] md:bg-[linear-gradient(60deg,rgba(190,223,254,.35),#bdc8f0)] md:px-6 md:pb-[87px] md:pt-[79px]">
       <div className="mx-auto max-w-[1200px]">
         <div className="md:hidden">
           <img src={logo} alt="Schoolcube" className="mb-10 w-[100px]" />
 
           <div className="mb-8">
-            <h3 className="mb-4 text-[16px] font-medium text-[#424242]">
+            <h3 className="mb-4 text-[16px] font-semi-bold text-[#424242]">
               Address
             </h3>
 
-            <p className="text-[14px] leading-8 text-[#666666]">
+            <p className="text-[14px] leading-8  font-medium text-[#666666]">
               12 Ajisafe street, Ikeja
               <br />
               GRA
@@ -20,11 +20,11 @@ const Footer = () => {
           </div>
 
           <div className="mb-8">
-            <h3 className="mb-4 text-[18px] font-medium text-[#424242]">
+            <h3 className="mb-4 text-[18px] font-semi-bold text-[#424242]">
               Contact
             </h3>
 
-            <p className="text-[14px] leading-8 text-[#424242]">
+            <p className="text-[14px] leading-8 font-medium text-[#424242]">
               info@schoolcube.net
               <br />
               support@schoolcube.net
@@ -32,11 +32,11 @@ const Footer = () => {
           </div>
 
           <div className="mb-10">
-            <h3 className="mb-4 text-[18px] font-medium text-[#424242]">
+            <h3 className="mb-4 text-[18px] font-semi-bold text-[#424242]">
               Phone
             </h3>
 
-            <p className="text-[14px] leading-8 text-[#424242]">
+            <p className="text-[14px] leading-8 font-medium text-[#424242]">
               +234-012914298
               <br />
               +234-705-394-4592
@@ -47,14 +47,14 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="mb-8 flex gap-10 text-[14px] font-bold text-[#424242]">
+          <div className="mb-8 flex gap-10 text-[14px] font-medium text-[#424242]">
             <a href="/">Facebook</a>
             <a href="/">Instagram</a>
             <a href="/">Linkedin</a>
           </div>
 
           <div className="border-t border-[#e5e5e5] pt-6">
-            <p className="text-[14px] text-[#5f5f5f] font-bold">
+            <p className="text-[14px] text-[#424242] font-medium">
               Copyright © 2026 Revocube. All Rights Reserved
             </p>
           </div>
@@ -65,21 +65,21 @@ const Footer = () => {
             <img src={logo} alt="Schoolcube" className="w-[195px]" />
 
             <div>
-              <h3 className="mb-4 text-[14px] font-medium text-[#222222]">
+              <h3 className="mb-4 text-[14px] font-medium text-[#424242]">
                 Address
               </h3>
 
-              <p className="text-[12px] leading-5 text-[#8a8a8a]">
+              <p className="text-[12px] leading-5 text-[#424242]">
                 12 Ajisafe street, Ikeja <br /> GRA
               </p>
             </div>
 
             <div>
-              <h3 className="mb-4 text-[14px] font-medium text-[#222222]">
+              <h3 className="mb-4 text-[14px] font-medium text-[#424242]">
                 Contact
               </h3>
 
-              <p className="text-[12px] leading-5 text-[#8a8a8a]">
+              <p className="text-[12px] leading-5 text-[#424242]">
                 info@schoolcube.net <br />
                 support@schoolcube.net
               </p>
@@ -100,7 +100,7 @@ const Footer = () => {
           </div>
 
           <div className="mt-[76px] border-t border-[#e5e5e5] pt-7">
-            <div className="flex items-center justify-between text-[11px] text-[#424242] font-bold">
+            <div className="flex items-center justify-between text-[11px] text-[#424242] font-medium">
               <p>Copyright © 2026 Revocube. All Rights Reserved</p>
 
               <div className="flex gap-8 text-[#424242]">

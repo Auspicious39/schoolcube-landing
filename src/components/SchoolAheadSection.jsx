@@ -1,6 +1,6 @@
-import { VscThumbsupFilled } from "react-icons/vsc";
-import { PiCrosshairThin } from "react-icons/pi";
-import { LuLockKeyhole } from "react-icons/lu";
+"use client";
+
+import { motion } from "framer-motion";
 
 const SchoolAheadSection = () => {
   const features = [
@@ -75,40 +75,87 @@ const SchoolAheadSection = () => {
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        damping: 18,
+        stiffness: 110,
+        duration: 0.6,
+      },
+    },
+  };
+
+  const headerVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, delay: 0.1, ease: "easeOut" },
+    },
+  };
+
   return (
-    <section className="bg-white px-4 sm:px-6 py-12 md:py-16">
+    <section className="overflow-hidden bg-white px-4 py-12 sm:px-6 md:px-0 md:pt-[176px] md:pb-0">
       <div className="mx-auto w-full max-w-[1200px]">
-        <div className="flex flex-row items-start justify-between gap-3 sm:gap-5 md:gap-8 mb-8 md:mb-12">
-          <h2 className="flex-1 min-w-0 text-lg sm:text-xl md:text-4xl font-bold leading-[130%] text-[#203684] md:max-w-[438px]">
-            Put Your School Ahead
-            <br className="hidden md:block" />
-            of Others
+        <motion.div
+          className="mb-8 flex flex-col items-start gap-3 sm:gap-5 md:mb-[84px] md:gap-7"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={headerVariants}
+        >
+          <h2 className="min-w-0 text-lg font-bold leading-[130%] text-[#203684] sm:text-xl md:text-[40px]">
+            Put Your School Ahead of Others
           </h2>
 
-          <p className="flex-1 min-w-0 text-xs sm:text-sm md:text-lg font-medium leading-[150%] text-[#475467] md:max-w-[438px]">
+          <p className="max-w-[519px] text-xs font-medium leading-[150%] text-[#475467] sm:text-sm md:text-[18px] md:leading-[1.55]">
             Increase the efficiency of your school by eliminating manual
             management tasks, which are prone to errors.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <motion.div
+          className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 md:gap-[20px]"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={containerVariants}
+        >
           {features.map((feature, i) => (
-            <article
+            <motion.article
               key={i}
-              className="flex flex-col gap-6 rounded-2xl bg-[#F6FBFF] p-6 md:p-8"
+              className="flex min-h-[220px] flex-col gap-6 rounded-2xl bg-[#F6FBFF] p-6 md:h-[259px] md:min-h-0 md:justify-center md:rounded-[20px] md:px-[31px] md:py-5"
+              variants={cardVariants}
             >
-              {feature.icon}
+              <div className="w-8 h-8 md:w-10 md:h-10 shrink-0">
+                {feature.icon}
+              </div>
 
-              <h3 className="text-base md:text-xl font-bold leading-[140%] text-[#282828]">
+              <h3 className="-mb-4 text-base font-bold leading-[140%] text-[#282828] md:text-xl">
                 {feature.title}
               </h3>
 
-              <p className="text-sm font-medium leading-[155%] text-[#475467]">
+              <p className="text-sm font-medium leading-[155%] text-[#475467] md:text-[14px]">
                 {feature.body}
               </p>
-            </article>
+            </motion.article>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -13,7 +13,6 @@ const cards = [
 
 const WhyChooseUs = () => {
   return (
-    /* Reduced h-[250vh] to h-[180vh] for mobile so scrolling matches the tighter gap */
     <section className="relative w-full h-[180vh] md:h-auto bg-[#EBEBEB] font-['Plus_Jakarta_Sans',sans-serif]">
       <div className="sticky top-0 z-0 h-[399px] md:h-screen w-full overflow-hidden flex flex-col">
         <img
@@ -39,7 +38,6 @@ const WhyChooseUs = () => {
         {cards.map((card, index) => (
           <div
             key={index}
-            /* CHANGED: Reduced pb-[40vh] to pb-[12vh] on mobile so cards scroll closer together */
             className="sticky pb-[12vh] md:pb-0 md:mb-20 top-[var(--mobile-top)] md:top-[var(--desktop-top)]"
             style={{
               "--mobile-top": `${178 + index * 12}px`,

@@ -3,7 +3,7 @@ import rightPattern from "../assets/5.png";
 
 const SetupBanner = () => {
   return (
-    <section className="bg-white px-4 py-10 md:px-6 md:py-[90px]">
+    <section className="bg-white px-4 py-10 md:px-0 md:py-[90px]">
       <div className="relative mx-auto flex w-full max-w-[327px] min-h-[261px] items-center justify-center overflow-hidden rounded-[20px] bg-[#F6FBFF] px-6 md:max-w-[1200px] md:min-h-[261px] md:justify-start md:rounded-[10px] md:px-[86px]">
         <img
           src={leftPattern}

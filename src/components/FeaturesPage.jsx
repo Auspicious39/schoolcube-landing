@@ -1,20 +1,14 @@
-import { useEffect, useState } from "react";
 import KeyBenefits from "./KeyBenefits";
 import SetupBanner from "./SetupBanner";
 import WhyChooseUs from "./WhyChooseUs";
 import dashboardPreview from "../assets/dashboard-preview.png";
-import backgroundImage from "../assets/background-2.png";
-import onboardingCard from "../assets/Frame 867.png";
-import oneStopCard from "../assets/Frame 868-2.png";
-import trainingCard from "../assets/Frame 2147228983.png";
-import interfaceCard from "../assets/Frame 2147228984.png";
 
 const FeaturesPage = () => {
   return (
     <div className="bg-white">
-      <main className="px-4 pt-[50px] pb-0 md:px-6 md:pt-[70px]">
-        <div className="mx-auto flex w-full max-w-[327px] flex-col items-center gap-8 text-center md:max-w-[852px] md:gap-6">
-          <div className="flex w-full flex-col items-center gap-4 pb-[17px] md:gap-4 md:pb-0">
+      <main className="px-4 pt-[79px] pb-0 md:px-6 md:pt-[112px]">
+        <div className="mx-auto flex w-full max-w-[327px] flex-col items-center gap-[70px] text-center sm:gap-10 md:max-w-[852px] md:gap-6">
+          <div className="mx-auto flex w-full max-w-[302px] flex-col items-center gap-3 pb-0 md:max-w-none md:gap-4 md:pb-0">
             <h1 className="w-full text-lg font-bold leading-[130%] text-[#203684] md:text-[56px]">
               Innovative Solutions at its Best
             </h1>
@@ -27,22 +21,22 @@ const FeaturesPage = () => {
             </p>
           </div>
 
-          <div className="flex w-full flex-row justify-center items-stretch gap-2 sm:gap-6 md:mt-8">
-            <button className="flex flex-1 sm:flex-none min-h-11 md:h-[49px] sm:w-[168px] items-center justify-center whitespace-normal sm:whitespace-nowrap text-center leading-tight gap-[10px] rounded-[5px] bg-[#203684] px-3 sm:px-[30px] font-medium text-[13px] sm:text-base text-white hover:bg-[#1a2861]">
+          <div className="flex w-full flex-row justify-center items-stretch gap-6 md:mt-8">
+            <button className="flex h-10 flex-1 items-center justify-center whitespace-nowrap rounded-[5px] bg-[#203684] px-3 text-center text-[16px] font-medium leading-tight text-white hover:bg-[#1a2861] sm:flex-none sm:w-[168px] md:h-[49px] md:px-[30px]">
               Start Free Trial
             </button>
 
-            <button className="flex flex-1 sm:flex-none min-h-11 md:h-[49px] sm:w-[168px] items-center justify-center whitespace-normal sm:whitespace-nowrap text-center leading-tight rounded-[5px] border-[0.5px] border-[#203684] px-3 sm:px-[30px] font-medium text-[13px] sm:text-base text-[#203684] hover:bg-[#f5fbff]">
+            <button className="flex h-10 flex-1 items-center justify-center whitespace-nowrap rounded-[5px] border-[0.5px] border-[#203684] px-3 text-center text-[16px] font-medium leading-tight text-[#203684] hover:bg-[#f5fbff] sm:flex-none sm:w-[151px] md:h-[49px] md:px-[30px]">
               Book Demo
             </button>
           </div>
         </div>
 
-        <div className="mx-auto mb-10 mt-[40px] w-full max-w-[291px] md:mb-[80px] md:max-w-[1016px]">
+        <div className="mx-auto mb-10 mt-[102px] w-full max-w-[327px] md:mb-[80px] md:mt-[113px] md:max-w-[1016px]">
           <img
             src={dashboardPreview}
             alt="Dashboard preview"
-            className="w-full rounded-[10px] object-contain pt-12"
+            className="w-full rounded-[10px] object-contain"
           />
         </div>
         <KeyBenefits />
