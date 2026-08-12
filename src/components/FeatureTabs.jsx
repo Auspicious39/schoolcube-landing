@@ -78,7 +78,7 @@ const FeatureTabs = () => {
               className={`flex h-auto w-max flex-shrink-0 items-center justify-center gap-[10px] whitespace-nowrap rounded-[40px] px-4 sm:px-5 py-2 md:py-4 text-sm md:text-lg font-medium transition-all duration-300 ${
                 activeTab.id === tab.id
                   ? "bg-[#339BFE] text-white"
-                  : "bg-[#339BFE]/8 text-[#666]"
+                  : "text-[#666]"
               }`}
             >
               {tab.title}

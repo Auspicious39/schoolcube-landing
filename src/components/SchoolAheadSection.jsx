@@ -110,10 +110,10 @@ const SchoolAheadSection = () => {
   };
 
   return (
-    <section className="overflow-hidden bg-white px-4 py-12 sm:px-6 md:px-0 md:pt-[176px] md:pb-0">
-      <div className="mx-auto w-full max-w-[1200px]">
+    <section className="overflow-hidden bg-white pb-[74px] pt-0 md:px-0 md:pb-0 md:pt-[176px]">
+      <div className="mx-auto w-full ">
         <motion.div
-          className="mb-8 flex flex-col items-start gap-3 sm:gap-5 md:mb-[84px] md:gap-7"
+          className="mb-10 flex flex-col items-start gap-6 md:mb-[84px] md:gap-7"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
@@ -123,14 +123,14 @@ const SchoolAheadSection = () => {
             Put Your School Ahead of Others
           </h2>
 
-          <p className="max-w-[519px] text-xs font-medium leading-[150%] text-[#475467] sm:text-sm md:text-[18px] md:leading-[1.55]">
+          <p className="max-w-[291px] text-[14px] font-medium leading-[1.55] text-[#475467] md:max-w-[519px] md:text-[18px] md:leading-[1.55]">
             Increase the efficiency of your school by eliminating manual
             management tasks, which are prone to errors.
           </p>
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 md:gap-[20px]"
+          className="grid grid-cols-1 gap-[30px] md:grid-cols-3 md:gap-[20px]"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
@@ -139,14 +139,14 @@ const SchoolAheadSection = () => {
           {features.map((feature, i) => (
             <motion.article
               key={i}
-              className="flex min-h-[220px] flex-col gap-6 rounded-2xl bg-[#F6FBFF] p-6 md:h-[259px] md:min-h-0 md:justify-center md:rounded-[20px] md:px-[31px] md:py-5"
+              className="flex h-[230px] flex-col justify-center gap-6 rounded-[20px] bg-[#F6FBFF] px-[31px] py-3 md:h-[259px] md:min-h-0 md:px-[31px] md:py-5"
               variants={cardVariants}
             >
-              <div className="w-8 h-8 md:w-10 md:h-10 shrink-0">
+              <div className="h-8 w-8 shrink-0 md:h-10 md:w-10">
                 {feature.icon}
               </div>
 
-              <h3 className="-mb-4 text-base font-bold leading-[140%] text-[#282828] md:text-xl">
+              <h3 className="-mb-4 text-[16px] font-bold leading-[1.395] text-[#282828] md:text-xl">
                 {feature.title}
               </h3>
 

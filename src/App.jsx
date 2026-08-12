@@ -10,7 +10,6 @@ export default function App() {
   return (
     <BrowserRouter>
       <Navbar />
-
       <Routes>
         <Route path="/" element={<><Home /><Footer /></>} />
         <Route path="/features" element={<><FeaturesPage /><Footer /></>} />

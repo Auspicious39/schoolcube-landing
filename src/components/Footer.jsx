@@ -2,41 +2,39 @@ import logo from "../assets/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-[#F0F8FF] px-4 pb-8 pt-10 md:h-[469px] md:bg-[linear-gradient(60deg,rgba(190,223,254,.35),#bdc8f0)] md:px-6 md:pb-[87px] md:pt-[79px]">
-      <div className="mx-auto max-w-[1200px]">
+    <footer className="relative bg-[#F0F8FF] px-6 pb-[31px] pt-[31px] md:h-[469px] md:bg-[linear-gradient(60deg,rgba(190,223,254,.35),#bdc8f0)] md:px-6 md:pb-[87px] md:pt-[79px]">
+      <div className="mx-auto w-full md:max-w-[80%]">
         <div className="md:hidden">
-          <img src={logo} alt="Schoolcube" className="mb-10 w-[100px]" />
+          <img src={logo} alt="Schoolcube" className="mb-[35px] w-[167px]" />
 
-          <div className="mb-8">
-            <h3 className="mb-4 text-[16px] font-semi-bold text-[#424242]">
+          <div className="mb-[30px]">
+            <h3 className="mb-4 text-[18px] font-medium text-[#424242]">
               Address
             </h3>
 
-            <p className="text-[14px] leading-8  font-medium text-[#666666]">
-              12 Ajisafe street, Ikeja
-              <br />
-              GRA
+            <p className="text-[14px] leading-[18px] font-medium text-[#666666]">
+              12 Ajisafe street, Ikeja GRA
             </p>
           </div>
 
-          <div className="mb-8">
-            <h3 className="mb-4 text-[18px] font-semi-bold text-[#424242]">
+          <div className="mb-[30px]">
+            <h3 className="mb-4 text-[18px] font-medium text-[#424242]">
               Contact
             </h3>
 
-            <p className="text-[14px] leading-8 font-medium text-[#424242]">
+            <p className="text-[14px] leading-[24px] font-medium text-[#424242]">
               info@schoolcube.net
               <br />
               support@schoolcube.net
             </p>
           </div>
 
-          <div className="mb-10">
-            <h3 className="mb-4 text-[18px] font-semi-bold text-[#424242]">
+          <div className="mb-[30px]">
+            <h3 className="mb-4 text-[18px] font-medium text-[#424242]">
               Phone
             </h3>
 
-            <p className="text-[14px] leading-8 font-medium text-[#424242]">
+            <p className="text-[14px] leading-[24px] font-medium text-[#424242]">
               +234-012914298
               <br />
               +234-705-394-4592
@@ -47,13 +45,13 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="mb-8 flex gap-10 text-[14px] font-medium text-[#424242]">
+          <div className="mb-[30px] flex gap-[31px] text-[14px] font-medium text-[#424242]">
             <a href="/">Facebook</a>
             <a href="/">Instagram</a>
             <a href="/">Linkedin</a>
           </div>
 
-          <div className="border-t border-[#e5e5e5] pt-6">
+          <div className="border-t border-[#e5e5e5] pt-[16px]">
             <p className="text-[14px] text-[#424242] font-medium">
               Copyright © 2026 Revocube. All Rights Reserved
             </p>
@@ -65,32 +63,32 @@ const Footer = () => {
             <img src={logo} alt="Schoolcube" className="w-[195px]" />
 
             <div>
-              <h3 className="mb-4 text-[14px] font-medium text-[#424242]">
+              <h3 className="mb-4 text-[18px] font-medium text-[#424242]">
                 Address
               </h3>
 
-              <p className="text-[12px] leading-5 text-[#424242]">
+              <p className="text-[16px] leading-5 text-[#424242]">
                 12 Ajisafe street, Ikeja <br /> GRA
               </p>
             </div>
 
             <div>
-              <h3 className="mb-4 text-[14px] font-medium text-[#424242]">
+              <h3 className="mb-4 text-[18px] font-medium text-[#424242]">
                 Contact
               </h3>
 
-              <p className="text-[12px] leading-5 text-[#424242]">
+              <p className="text-[16px] leading-5 text-[#424242]">
                 info@schoolcube.net <br />
                 support@schoolcube.net
               </p>
             </div>
 
-            <div>
-              <h3 className="mb-4 text-[16px] font-medium text-[#424242]">
+            <div className="text-right">
+              <h3 className="mb-4 text-[18px]  font-medium text-[#424242]">
                 Phone
               </h3>
 
-              <p className="text-[14px] leading-5 text-[#424242]">
+              <p className="text-[16px] leading-5 text-[#424242]">
                 +234-012914298 <br />
                 +234-705-394-4592 <br />
                 +234-705-394-4594 <br />
@@ -100,7 +98,7 @@ const Footer = () => {
           </div>
 
           <div className="mt-[76px] border-t border-[#e5e5e5] pt-7">
-            <div className="flex items-center justify-between text-[11px] text-[#424242] font-medium">
+            <div className="flex items-center justify-between text-[14px] text-[#000000] font-medium">
               <p>Copyright © 2026 Revocube. All Rights Reserved</p>
 
               <div className="flex gap-8 text-[#424242]">

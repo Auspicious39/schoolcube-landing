@@ -1,12 +1,17 @@
+import { useNavigate } from "react-router-dom";
 import KeyBenefits from "./KeyBenefits";
 import SetupBanner from "./SetupBanner";
 import WhyChooseUs from "./WhyChooseUs";
 import dashboardPreview from "../assets/dashboard-preview.png";
 
+
 const FeaturesPage = () => {
+
+  const navigate = useNavigate();
+
   return (
-    <div className="bg-white">
-      <main className="px-4 pt-[79px] pb-0 md:px-6 md:pt-[112px]">
+    <div className="bg-white  mx-auto">
+      <main className="px-4 pt-[59px] pb-0 md:px-6 md:pt-[112px]">
         <div className="mx-auto flex w-full max-w-[327px] flex-col items-center gap-[70px] text-center sm:gap-10 md:max-w-[852px] md:gap-6">
           <div className="mx-auto flex w-full max-w-[302px] flex-col items-center gap-3 pb-0 md:max-w-none md:gap-4 md:pb-0">
             <h1 className="w-full text-lg font-bold leading-[130%] text-[#203684] md:text-[56px]">
@@ -26,7 +31,7 @@ const FeaturesPage = () => {
               Start Free Trial
             </button>
 
-            <button className="flex h-10 flex-1 items-center justify-center whitespace-nowrap rounded-[5px] border-[0.5px] border-[#203684] px-3 text-center text-[16px] font-medium leading-tight text-[#203684] hover:bg-[#f5fbff] sm:flex-none sm:w-[151px] md:h-[49px] md:px-[30px]">
+            <button onClick={() => navigate("/pricing")} className="flex h-10 flex-1 items-center justify-center whitespace-nowrap rounded-[5px] border-[0.5px] border-[#203684] px-3 text-center text-[16px] font-medium leading-tight text-[#203684] hover:bg-[#f5fbff] sm:flex-none sm:w-[151px] md:h-[49px] md:px-[30px]">
               Book Demo
             </button>
           </div>
@@ -39,8 +44,8 @@ const FeaturesPage = () => {
             className="w-full rounded-[10px] object-contain"
           />
         </div>
-        <KeyBenefits />
       </main>
+      <KeyBenefits />
 
       <WhyChooseUs />
 

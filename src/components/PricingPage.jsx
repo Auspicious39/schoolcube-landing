@@ -1,4 +1,6 @@
 import { Check, X } from "lucide-react";
+import featureHeadingIcon from "../assets/pricing-feature-heading.svg";
+import featureCheckIcon from "../assets/pricing-feature-check.svg";
 
 const features = [
   "Online Student Environment",
@@ -25,10 +27,15 @@ const features = [
 ];
 
 const plans = [
-  { name: "Schoolcube Basic", price: "₦1000", included: 13 },
-  { name: "Schoolcube Bolt", price: "₦1500", included: 14 },
-  { name: "Schoolcube Pro", price: "₦2500", included: 17 },
-  { name: "Schoolcube Enterprise", price: "₦5000", included: features.length },
+  { name: "Schoolcube Basic", price: "₦1000", included: 13, featureListHeight: 704 },
+  { name: "Schoolcube Bolt", price: "₦1500", included: 14, featureListHeight: 712 },
+  { name: "Schoolcube Pro", price: "₦2500", included: 17, featureListHeight: 832 },
+  {
+    name: "Schoolcube Enterprise",
+    price: "₦5000",
+    included: features.length,
+    featureListHeight: 1008,
+  },
 ];
 
 const planDescription =
@@ -36,7 +43,7 @@ const planDescription =
 
 export default function PricingPage() {
   return (
-    <main className="bg-white px-4 pb-16 pt-[123px] md:px-6 md:pb-[39px] md:pt-[88px]">
+    <main className="bg-white px-6 pb-[127px] pt-[123px] md:px-6 md:pb-[39px] md:pt-[88px]">
       <section className="mx-auto max-w-[1200px]">
         <div className="mx-auto max-w-[846px] pb-[17px] text-center lg:pb-0">
           <h1 className="text-[18px] font-bold leading-[1.3] text-[#203684] md:text-[40px] lg:text-[56px] lg:leading-[1.39] lg:tracking-[0.4px]">
@@ -49,7 +56,7 @@ export default function PricingPage() {
           </p>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:hidden">
+        <div className="mt-[42px] grid grid-cols-1 gap-10 sm:grid-cols-2 lg:hidden">
           {plans.map((plan) => (
             <article
               key={plan.name}
@@ -74,9 +81,12 @@ export default function PricingPage() {
                   Get Started
                 </button>
               </div>
-              <ul className="mt-8 flex flex-col gap-4 border-t border-[#eaebf0] py-8">
+              <ul
+                className="flex flex-col gap-4 pb-6 pt-8"
+                style={{ height: plan.featureListHeight }}
+              >
                 <li className="flex items-center gap-2 text-base font-bold leading-6 text-[#475467]">
-                  <Check size={24} strokeWidth={2} className="text-[#339bfe]" />
+                  <img src={featureHeadingIcon} alt="" className="h-6 w-6 shrink-0" />
                   Features
                 </li>
                 {features.slice(0, plan.included).map((feature) => (
@@ -84,13 +94,8 @@ export default function PricingPage() {
                     key={feature}
                     className="flex items-start gap-2 text-[14px] leading-[1.4] tracking-[0.14px] text-[#47505b]"
                   >
-                    <Check
-                      size={24}
-                      strokeWidth={2}
-                      className="shrink-0 text-[#339bfe]"
-                      aria-hidden="true"
-                    />
-                    <span className="pt-[2px]">{feature}</span>
+                    <img src={featureCheckIcon} alt="" className="h-6 w-6 shrink-0" />
+                    <span>{feature}</span>
                   </li>
                 ))}
               </ul>
