@@ -2,7 +2,7 @@ import logo from "../assets/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-[#F0F8FF] px-6 pb-[31px] pt-[31px] md:h-[469px] md:bg-[linear-gradient(60deg,rgba(190,223,254,.35),#bdc8f0)] md:px-6 md:pb-[87px] md:pt-[79px]">
+    <footer className="relative bg-[#BEDFFE1F] px-6 pb-[31px] pt-[31px] md:h-[469px] md:bg-[linear-gradient(79.28deg,rgba(190,223,254,0.06),#bdc8f0)] md:px-6 md:pb-[87px] md:pt-[79px]">
       <div className="mx-auto w-full md:max-w-[80%]">
         <div className="md:hidden">
           <img src={logo} alt="Schoolcube" className="mb-[35px] w-[167px]" />

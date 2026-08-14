@@ -308,7 +308,7 @@ const Navbar = () => {
         ref={filterRef}
       />
 
-      <div className="mx-auto flex h-[57px] w-full items-center justify-between md:h-[67px] md:max-w-[80%]">
+      <div className="mx-auto flex h-[57px] w-full items-center justify-between md:h-[67px] md:max-w-[85%]">
         <Link to="/" onClick={scrollToTop}>
           <img
             src={logo}

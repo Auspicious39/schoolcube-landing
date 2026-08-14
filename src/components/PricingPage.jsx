@@ -1,4 +1,3 @@
-import { Check, X } from "lucide-react";
 import featureHeadingIcon from "../assets/pricing-feature-heading.svg";
 import featureCheckIcon from "../assets/pricing-feature-check.svg";
 
@@ -14,6 +13,7 @@ const features = [
   "Schoolfees collection and settlement",
   "Export data to PDF",
   "Communication (email and newsletter)",
+  "Communication (email only)",
   "Student medical report",
   "Parent’s Portal",
   "Online Learning Management System (LMS)",
@@ -27,14 +27,13 @@ const features = [
 ];
 
 const plans = [
-  { name: "Schoolcube Basic", price: "₦1000", included: 13, featureListHeight: 704 },
-  { name: "Schoolcube Bolt", price: "₦1500", included: 14, featureListHeight: 712 },
-  { name: "Schoolcube Pro", price: "₦2500", included: 17, featureListHeight: 832 },
+  { name: "Schoolcube Basic", price: "₦1000", included: 14 },
+  { name: "Schoolcube Bolt", price: "₦1500", included: 15 },
+  { name: "Schoolcube Pro", price: "₦2500", included: 18 },
   {
     name: "Schoolcube Enterprise",
     price: "₦5000",
     included: features.length,
-    featureListHeight: 1008,
   },
 ];
 
@@ -81,17 +80,14 @@ export default function PricingPage() {
                   Get Started
                 </button>
               </div>
-              <ul
-                className="flex flex-col gap-4 pb-6 pt-8"
-                style={{ height: plan.featureListHeight }}
-              >
+              <ul className="flex flex-col gap-4 pb-1 pt-8">
                 <li className="flex items-center gap-2 text-base font-bold leading-6 text-[#475467]">
                   <img src={featureHeadingIcon} alt="" className="h-6 w-6 shrink-0" />
                   Features
                 </li>
-                {features.slice(0, plan.included).map((feature) => (
+                {features.slice(0, plan.included).map((feature, index) => (
                   <li
-                    key={feature}
+                    key={`${feature}-${index}`}
                     className="flex items-start gap-2 text-[14px] leading-[1.4] tracking-[0.14px] text-[#47505b]"
                   >
                     <img src={featureCheckIcon} alt="" className="h-6 w-6 shrink-0" />
@@ -127,63 +123,39 @@ export default function PricingPage() {
           ))}
         </div>
 
-        <div className="mt-[64px] hidden overflow-x-auto pb-2 lg:block">
-          <div className="min-w-[1200px]">
-            <div className="grid grid-cols-[216px_repeat(4,216px)] gap-[30px] pb-8">
-              <div />
-              {plans.map((plan) => (
-                <div
-                  key={plan.name}
-                  className="rounded-[20px] border border-[#dae4f2] bg-white p-6"
-                >
-                  <p className="text-[14px] font-medium leading-normal text-[#203684]">
-                    {plan.name}
-                  </p>
-                  <p className="mt-2 text-[24px] font-bold leading-normal text-[#203684]">
-                    {plan.price}
-                  </p>
-                  <p className="mt-2 text-[12px] leading-normal text-[#47505b]">
-                    Per student per term
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <div className="grid grid-cols-[216px_repeat(4,216px)] gap-x-[30px]">
-              {features.map((feature, rowIndex) => (
-                <div key={feature} className="contents">
-                  <div className="flex min-h-16 items-center text-[12px] leading-[1.3] text-[#47505b]">
-                    {feature}
-                  </div>
-                  {plans.map((plan) => {
-                    const included = rowIndex < plan.included;
-                    return (
-                      <div
-                        key={plan.name}
-                        className="flex min-h-16 items-center justify-center"
-                      >
-                        {included ? (
-                          <Check
-                            size={16}
-                            strokeWidth={2}
-                            className="text-[#47505b]"
-                            aria-label="Included"
-                          />
-                        ) : (
-                          <X
-                            size={16}
-                            strokeWidth={2}
-                            className="text-[#dae4f2]"
-                            aria-label="Not included"
-                          />
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
-              ))}
-            </div>
-          </div>
+        <div className="mt-10 hidden grid-cols-4 gap-6 lg:grid">
+          {plans.map((plan) => (
+            <article
+              key={plan.name}
+              className="rounded-[8px] border border-[#eaebf0] bg-white p-6"
+            >
+              <div className="flex items-center gap-2 text-base font-bold leading-6 text-[#475467]">
+                <img
+                  src={featureHeadingIcon}
+                  alt=""
+                  aria-hidden="true"
+                  className="h-6 w-6 shrink-0"
+                />
+                Features
+              </div>
+              <ul className="mt-6 flex flex-col gap-4">
+                {features.slice(0, plan.included).map((feature, index) => (
+                  <li
+                    key={`${feature}-${index}`}
+                    className="flex items-start gap-2 text-[14px] leading-[1.4] tracking-[0.14px] text-[#47505b]"
+                  >
+                    <img
+                      src={featureCheckIcon}
+                      alt=""
+                      aria-hidden="true"
+                      className="h-6 w-6 shrink-0"
+                    />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
         </div>
       </section>
     </main>

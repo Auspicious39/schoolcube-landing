@@ -1,7 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
-
 const SchoolAheadSection = () => {
   const features = [
     {
@@ -75,50 +71,10 @@ const SchoolAheadSection = () => {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 40, scale: 0.95 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        type: "spring",
-        damping: 18,
-        stiffness: 110,
-        duration: 0.6,
-      },
-    },
-  };
-
-  const headerVariants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7, delay: 0.1, ease: "easeOut" },
-    },
-  };
-
   return (
     <section className="overflow-hidden bg-white pb-[74px] pt-0 md:px-0 md:pb-0 md:pt-[176px]">
       <div className="mx-auto w-full ">
-        <motion.div
-          className="mb-10 flex flex-col items-start gap-6 md:mb-[84px] md:gap-7"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          variants={headerVariants}
-        >
+        <div className="mb-10 flex flex-col items-start gap-6 md:mb-[84px] md:gap-7">
           <h2 className="min-w-0 text-lg font-bold leading-[130%] text-[#203684] sm:text-xl md:text-[40px]">
             Put Your School Ahead of Others
           </h2>
@@ -127,20 +83,13 @@ const SchoolAheadSection = () => {
             Increase the efficiency of your school by eliminating manual
             management tasks, which are prone to errors.
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="grid grid-cols-1 gap-[30px] md:grid-cols-3 md:gap-[20px]"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={containerVariants}
-        >
+        <div className="grid grid-cols-1 gap-[30px] md:grid-cols-3 md:gap-[20px]">
           {features.map((feature, i) => (
-            <motion.article
+            <article
               key={i}
               className="flex h-[230px] flex-col justify-center gap-6 rounded-[20px] bg-[#F6FBFF] px-[31px] py-3 md:h-[259px] md:min-h-0 md:px-[31px] md:py-5"
-              variants={cardVariants}
             >
               <div className="h-8 w-8 shrink-0 md:h-10 md:w-10">
                 {feature.icon}
@@ -153,9 +102,9 @@ const SchoolAheadSection = () => {
               <p className="text-sm font-medium leading-[155%] text-[#475467] md:text-[14px]">
                 {feature.body}
               </p>
-            </motion.article>
+            </article>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

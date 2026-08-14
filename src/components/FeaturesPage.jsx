@@ -11,7 +11,7 @@ const FeaturesPage = () => {
 
   return (
     <div className="bg-white  mx-auto">
-      <main className="px-4 pt-[59px] pb-0 md:px-6 md:pt-[112px]">
+      <main className="px-4 pt-[59px] pb-0 md:px-6 md:pt-[82px]">
         <div className="mx-auto flex w-full max-w-[327px] flex-col items-center gap-[70px] text-center sm:gap-10 md:max-w-[852px] md:gap-6">
           <div className="mx-auto flex w-full max-w-[302px] flex-col items-center gap-3 pb-0 md:max-w-none md:gap-4 md:pb-0">
             <h1 className="w-full text-lg font-bold leading-[130%] text-[#203684] md:text-[56px]">
@@ -37,7 +37,7 @@ const FeaturesPage = () => {
           </div>
         </div>
 
-        <div className="mx-auto mb-10 mt-[102px] w-full max-w-[327px] md:mb-[80px] md:mt-[113px] md:max-w-[1016px]">
+        <div className="mx-auto mb-10 mt-[102px] w-full max-w-[327px] md:mb-[64px] md:mt-[74px] md:max-w-[920px]">
           <img
             src={dashboardPreview}
             alt="Dashboard preview"
