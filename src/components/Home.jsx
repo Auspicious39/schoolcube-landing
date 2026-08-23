@@ -9,14 +9,14 @@ import SetupBanner from "./SetupBanner";
 const Home = () => {
   return (
     <>
-      <main className="overflow-x-hidden bg-white pb-5 pt-6 md:px-6 md:pb-9 md:pt-[25px]">
-        <div className="mx-auto w-full max-w-[calc(100%-48px)] md:max-w-[1200px]">
+      <main className="overflow-x-hidden bg-white px-6 pb-5 pt-6 md:pb-9 md:pt-[25px]">
+        <div className="w-full">
           <HeroText />
           <TrustBadges />
           <SchoolAheadSection />
           <HassleSection />
           <FeatureTabs />
-          <KeyBenefits variant="compact" />
+          <KeyBenefits />
           <SetupBanner />
         </div>
       </main>

@@ -199,7 +199,7 @@ const Navbar = () => {
     <header
       ref={containerRef}
 
-      className="sticky top-0 z-50 h-[76px] bg-white px-6 py-0 md:mt-2 md:h-[79px] md:rounded-[15px] md:px-6 md:py-[6px]"
+      className="sticky top-0 z-50 h-[40px] bg-white px-6 py-0 md:mt-2 md:h-[79px] md:rounded-[15px] md:px-10 md:py-[6px]"
     >
       <style>{`
         :root {
@@ -308,7 +308,7 @@ const Navbar = () => {
         ref={filterRef}
       />
 
-      <div className="mx-auto flex h-[57px] w-full items-center justify-between md:h-[67px] md:max-w-[85%]">
+      <div className="flex h-[57px] w-full items-center justify-between md:h-[67px]">
         <Link to="/" onClick={scrollToTop}>
           <img
             src={logo}

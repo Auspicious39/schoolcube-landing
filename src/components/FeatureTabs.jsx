@@ -69,7 +69,7 @@ const FeatureTabs = () => {
 
   return (
     <section className="overflow-hidden bg-white px-4 py-16 sm:px-6 md:px-0 md:pt-[76px] md:pb-[111px]">
-      <div className="mx-auto max-w-[1200px]">
+      <div className="w-full">
         <div className="mx-auto mb-10 flex w-full max-w-full items-center gap-2 overflow-x-auto rounded-[40px] border border-black/15 p-3 scrollbar-hide sm:gap-3 md:mb-[111px] md:max-w-[892px] md:flex-nowrap md:justify-between md:gap-0">
           {tabs.map((tab) => (
             <button

@@ -1,7 +1,7 @@
 const HassleFeatureSection = () => {
   return (
     <section className="bg-white pb-[60px] pt-0 md:px-6 md:pb-0 md:pt-[180px]">
-      <div className="mx-auto flex w-full max-w-[1200px] flex-col items-start gap-6 text-left md:items-center md:gap-7 md:text-center">
+      <div className="flex w-full flex-col items-start gap-6 text-left md:items-center md:gap-7 md:text-center">
         <h2 className="text-lg font-bold leading-[136%] tracking-[0.2px] text-[#203684] sm:text-xl md:text-[40px] md:leading-[1.36]">
           Managing a School Should Not Be a Hassle
         </h2>
