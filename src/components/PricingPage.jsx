@@ -42,7 +42,7 @@ const planDescription =
 
 export default function PricingPage() {
   return (
-    <main className="bg-white px-6 pb-[127px] pt-[40px] md:px-6 md:pb-[100px] md:pt-[20px]">
+    <main className="bg-white px-6 pb-[127px] pt-[40px] md:px-6 md:pb-[100px] md:pt-[100px]">
       <section className="mx-auto max-w-[1200px]">
         <div className="mx-auto max-w-[846px] pb-[17px] text-center lg:pb-0">
           <h1 className="text-[18px] font-bold leading-[1.3] text-[#203684] md:text-[40px] lg:text-[56px] lg:leading-[1.39] lg:tracking-[0.4px]">

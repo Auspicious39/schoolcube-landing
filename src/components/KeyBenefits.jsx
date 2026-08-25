@@ -1,11 +1,9 @@
-import { motion } from "framer-motion";
-
 const COLORS = {
   navy: "#203684",
   ink: "#2B3674",
   sub: "#A3AED0",
   bodyText: "#475467",
-  cardBg: "#F4F7FE",
+  cardBg: "#F6F6F6",
   white: "#FFFFFF",
   bluePrimary: "#4318FF",
   blueLight: "#7090FF",
@@ -13,23 +11,10 @@ const COLORS = {
   border: "#E9EDF7",
 };
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
-};
-
 function Panel({ children, className = "" }) {
   return (
     <div
-      className={`min-h-[190px] rounded-[16px] bg-white p-6 shadow-[0px_18px_40px_rgba(112,144,176,0.06)] ${className}`}
+      className={`min-h-[190px] w-full overflow-hidden rounded-[16px] bg-white p-4 sm:p-6 shadow-[0px_18px_40px_rgba(112,144,176,0.06)] ${className}`}
     >
       {children}
     </div>
@@ -38,53 +23,46 @@ function Panel({ children, className = "" }) {
 
 function Card({ title, description, children }) {
   return (
-    <motion.div
-      variants={cardVariants}
-      whileHover={{ y: -4, transition: { duration: 0.2 } }}
-      className="flex flex-col justify-between transition-shadow duration-300"
-      style={{
-        backgroundColor: COLORS.cardBg,
-        width: "450px",
-        height: "396px",
-        gap: "26.08px",
-        borderRadius: "21.96px",
-        paddingTop: "29.28px",
-        paddingRight: "28px",
-        paddingBottom: "29.28px",
-        paddingLeft: "28px",
-      }}
+    <div
+      className="flex w-full max-w-full flex-col justify-between gap-5 rounded-[16px] px-4 pb-6 pt-6 sm:px-5 md:w-full md:max-w-[450px] md:gap-[26.08px] md:rounded-[21.96px] md:pb-[29.28px] md:pl-[28px] md:pr-[28px] md:pt-[29.28px]"
+      style={{ backgroundColor: COLORS.cardBg }}
     >
       <div>
-        <h3 className="mb-3 text-[22px] font-bold leading-snug" style={{ color: COLORS.ink }}>
+        <h3 className="mb-3 text-[18px] font-bold leading-snug md:text-[20px]" style={{ color: "#000000CC" }}>
           {title}
         </h3>
-        <p className="text-[14px] leading-relaxed" style={{ color: COLORS.bodyText }}>
+        <p className="text-[14px] leading-relaxed md:text-[16px]" style={{ color: "#666666" }}>
           {description}
         </p>
       </div>
       <div>{children}</div>
-    </motion.div>
+    </div>
   );
 }
 
 /* 1. Attendance Mini Bars */
-function AttendanceMiniBars({ heights }) {
+function AttendanceMiniBars() {
   return (
-    <div className="flex items-end gap-1.5 h-12">
-      {heights.map((h, i) => (
-        <motion.div
-          key={i}
-          className="w-3.5 rounded-t-sm"
-          initial={{ height: 0 }}
-          whileInView={{ height: `${h}px` }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: i * 0.1 }}
-          style={{
-            background: "linear-gradient(180deg, #6AD2FF 0%, #3965FF 100%)",
-          }}
-        />
-      ))}
-    </div>
+    <svg
+      viewBox="0 0 200 240"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-[60px] w-[51px] md:h-[73px] md:w-[62px]"
+    >
+      <defs>
+        <linearGradient id="barGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="#6FBBFF" />
+          <stop offset="45%" stopColor="#95CBFF" />
+          <stop offset="100%" stopColor="#E5F3FF" />
+        </linearGradient>
+      </defs>
+      <rect x="0" y="100" width="60" height="140" rx="30" fill="#E9EFFF" />
+      <rect x="0" y="135" width="60" height="105" rx="30" fill="url(#barGradient)" />
+      <rect x="70" y="60" width="60" height="180" rx="30" fill="#E9EFFF" />
+      <rect x="70" y="100" width="60" height="140" rx="30" fill="url(#barGradient)" />
+      <rect x="140" y="0" width="60" height="240" rx="30" fill="#E8F1FF" />
+      <rect x="140" y="60" width="60" height="180" rx="30" fill="url(#barGradient)" />
+    </svg>
   );
 }
 
@@ -95,21 +73,21 @@ function UpToDateInformation() {
       description="We take pride in collecting and analyzing complete and accurate data on students, staff, and parents."
     >
       <Panel>
-        <div className="flex justify-end mb-4">
-          <div className="flex items-center gap-2 rounded-lg border px-3 py-1.5 text-[11px] font-medium text-[#A3AED0]">
-            Last Synced: 2mins ago <span className="text-[9px]">▼</span>
+        <div className="mb-4 flex justify-end">
+          <div className="flex items-center gap-2 bg-[#F6F6F6] text-[11px] font-medium text-[#475467]">
+            Last Synced: 2mins ago
           </div>
         </div>
-        <div className="flex justify-between gap-4">
-          <div className="flex-1">
-            <div className="text-[12px] font-medium text-[#A3AED0] mb-1">Students Attendance</div>
-            <div className="text-2xl font-bold mb-3 text-[#2B3674]">98%</div>
-            <AttendanceMiniBars heights={[20, 32, 44]} />
+        <div className="flex justify-center gap-6 sm:gap-8 md:gap-20">
+          <div>
+            <div className="mb-1 text-[10px] font-medium text-[#475467]">Students Attendance</div>
+            <div className="mb-3 text-[16px] font-medium text-[#475467]">98%</div>
+            <AttendanceMiniBars />
           </div>
-          <div className="flex-1">
-            <div className="text-[12px] font-medium text-[#A3AED0] mb-1">Staff Attendance</div>
-            <div className="text-2xl font-bold mb-3 text-[#2B3674]">78%</div>
-            <AttendanceMiniBars heights={[16, 28, 38]} />
+          <div>
+            <div className="mb-1 text-[10px] font-medium text-[#475467]">Staff Attendance</div>
+            <div className="mb-3 text-[16px] font-medium text-[#475467]">78%</div>
+            <AttendanceMiniBars />
           </div>
         </div>
       </Panel>
@@ -118,18 +96,19 @@ function UpToDateInformation() {
 }
 
 /* 2. Data Analysis Bar Chart */
-const CHART_DATA = [
-  { label: "JSS1A", h: 30, hatched: false },
-  { label: "JSS1C", h: 70, hatched: true },
-  { label: "JSS1D", h: 30, hatched: false },
-  { label: "JSS2A", h: 50, hatched: false },
-  { label: "JSS2B", h: 20, hatched: false },
-  { label: "JSS2C", h: 40, hatched: false },
-  { label: "JSS2D", h: 25, hatched: true },
-  { label: "JSS3A", h: 15, hatched: false },
-  { label: "SSS2A", h: 100, hatched: false },
-  { label: "SSS2B", h: 45, hatched: false },
-  { label: "SSS2C", h: 30, hatched: true },
+const COMBINED_CHART_DATA = [
+  { label: "JSS1A" },
+  { label: "JSS1C" },
+  { label: "JSS1D" },
+  { label: "JSS2A" },
+  { label: "JSS2B" },
+  { label: "JSS2C" },
+  { label: "JSS2D" },
+  { label: "JSS3A" },
+  { label: "SSS2A" },
+  { label: "SSS2B" },
+  { label: "SSS2C" },
+  { label: "SSS3A" },
 ];
 
 function DataAnalysis() {
@@ -138,16 +117,19 @@ function DataAnalysis() {
       title="Data Analysis"
       description="Schoolcube.net provides clear reports and data analysis through the use of tables and charts."
     >
-      <Panel>
-        <div className="flex items-center justify-between mb-4">
-          <div className="text-[13px] font-bold text-[#2B3674]">2021/2022 Third Semester Students</div>
-          <div className="flex gap-3 text-[11px] text-[#4318FF] font-medium">
+      <Panel className="p-3 sm:p-5">
+        <div className="mb-3">
+          <div className="text-[14px] font-bold text-[#101828] sm:text-[16px]">
+            2021/2022 Third Semester Students
+          </div>
+          <div className="mt-1 flex justify-end gap-3 text-[11px] font-medium text-[#1E91FF]">
             <span>Students ↗</span>
             <span>Staff ↗</span>
           </div>
         </div>
-        <div className="flex items-end h-[110px]">
-          <div className="flex flex-col justify-between text-right pr-2 pb-4 h-full w-6 text-[9px] text-[#A3AED0]">
+
+        <div className="relative flex h-[120px] w-full items-end pt-2">
+          <div className="flex h-full w-6 flex-col justify-between pb-4 pr-1 text-right text-[8px] text-[#66717F] sm:text-[9px]">
             <span>250</span>
             <span>200</span>
             <span>150</span>
@@ -155,25 +137,59 @@ function DataAnalysis() {
             <span>50</span>
             <span>0</span>
           </div>
-          <div className="flex items-end gap-1.5 flex-1 h-full">
-            {CHART_DATA.map((d, i) => (
-              <div key={i} className="flex flex-col items-center gap-1 flex-1 h-full justify-end">
-                <motion.div
-                  className="w-full rounded-t-[3px]"
-                  initial={{ height: 0 }}
-                  whileInView={{ height: `${d.h}%` }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.03 }}
-                  style={{
-                    background: d.hatched
-                      ? `repeating-linear-gradient(135deg, #A3C9FF 0 2px, #E6EFFC 2px 5px)`
-                      : "linear-gradient(180deg, #6AD2FF 0%, #3965FF 100%)",
-                  }}
-                />
-                <div className="text-[8px] text-[#A3AED0]">{d.label}</div>
-              </div>
+
+          <div className="pointer-events-none absolute inset-x-0 bottom-5 left-7 top-2 flex flex-col justify-between">
+            {[0, 1, 2, 3, 4, 5].map((i) => (
+              <div key={i} className="w-full border-b border-dashed border-[#EAECF0]" />
             ))}
           </div>
+
+          <div className="relative z-10 flex h-full flex-1 items-end pl-1">
+            <div className="flex h-full w-[20%] items-end pr-0.5">
+              <div
+                className="h-[30%] w-full rounded-t-[2px]"
+                style={{ background: "linear-gradient(180deg, #6BB9FF 0%, #9DD1FF 45.67%, #FFFFFF 100%)" }}
+              />
+            </div>
+            <div className="flex h-full w-[20%] items-end pr-0.5">
+              <div
+                className="h-[70%] w-full rounded-t-[2px]"
+                style={{ background: "repeating-linear-gradient(135deg, #A3C9FF 0 2px, #E6EFFC 2px 5px)" }}
+              />
+            </div>
+            <div className="flex h-full w-[20%] items-end pr-0.5">
+              <div
+                className="h-[32%] w-full rounded-t-[2px]"
+                style={{ background: "linear-gradient(180deg, #6BB9FF 0%, #9DD1FF 45.67%, #FFFFFF 100%)" }}
+              />
+            </div>
+            <div className="flex h-full w-[20%] items-end pr-0.5">
+              <div
+                className="h-[20%] w-full rounded-t-[2px]"
+                style={{ background: "repeating-linear-gradient(135deg, #A3C9FF 0 2px, #E6EFFC 2px 5px)" }}
+              />
+            </div>
+            <div className="flex h-full w-[10%] items-end pr-0.5">
+              <div
+                className="h-[100%] w-full rounded-t-[2px]"
+                style={{ background: "linear-gradient(180deg, #6BB9FF 0%, #9DD1FF 45.67%, #FFFFFF 100%)" }}
+              />
+            </div>
+            <div className="flex h-full w-[10%] items-end">
+              <div
+                className="h-[32%] w-full rounded-t-[2px]"
+                style={{ background: "repeating-linear-gradient(135deg, #A3C9FF 0 2px, #E6EFFC 2px 5px)" }}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-1 flex w-full pl-6 text-center text-[7px] text-[#66717F] sm:text-[8px]">
+          {COMBINED_CHART_DATA.map((d, i) => (
+            <div key={i} className="flex-1 truncate">
+              {d.label}
+            </div>
+          ))}
         </div>
       </Panel>
     </Card>
@@ -181,38 +197,43 @@ function DataAnalysis() {
 }
 
 /* 3. System Uptime Radial Gauge */
-function SystemUptimeGauge({ percent = 98, ticks = 36 }) {
-  const cx = 140,
-    cy = 120,
-    rInner = 60,
-    rOuter = 78;
-  const filled = Math.round(ticks * (percent / 100));
-
+function SystemUptimeGauge() {
   return (
-    <svg width="100%" height="130" viewBox="0 0 280 130">
-      {Array.from({ length: ticks }, (_, i) => {
-        const angle = Math.PI - (i / (ticks - 1)) * Math.PI;
-        const x1 = cx + rInner * Math.cos(angle);
-        const y1 = cy - rInner * Math.sin(angle);
-        const x2 = cx + rOuter * Math.cos(angle);
-        const y2 = cy - rOuter * Math.sin(angle);
-        return (
-          <motion.line
-            key={i}
-            x1={x1}
-            y1={y1}
-            x2={x2}
-            y2={y2}
-            strokeWidth={4.5}
-            strokeLinecap="round"
-            initial={{ opacity: 0.2 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.1, delay: i * 0.015 }}
-            stroke={i < filled ? "#4318FF" : "#E9EDF7"}
-          />
-        );
-      })}
+    <svg
+      viewBox="0 0 360 200"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-auto max-h-[140px] w-full max-w-[360px]"
+    >
+      <defs>
+        <linearGradient id="uptimeTickGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="#6FBBFF" />
+          <stop offset="60%" stopColor="#95CBFF" />
+          <stop offset="100%" stopColor="#E5F3FF" />
+        </linearGradient>
+      </defs>
+
+      <text x="170" y="15" fill="#475467" fontSize="18" fontWeight="500" textAnchor="middle" fontFamily="Plus Jakarta Sans, sans-serif">
+        System Uptime
+      </text>
+      <text x="75" y="75" fill="#475467" fontSize="15" fontWeight="500" textAnchor="end" fontFamily="Plus Jakarta Sans, sans-serif">
+        Stability Score
+      </text>
+      <text x="285" y="75" fill="#475467" fontSize="15" fontWeight="500" textAnchor="start" fontFamily="Plus Jakarta Sans, sans-serif">
+        Reliability
+      </text>
+      <text x="180" y="140" fill="#475467" fontSize="20" fontWeight="500" textAnchor="middle" fontFamily="Plus Jakarta Sans, sans-serif">
+        98%
+      </text>
+
+      <g transform="translate(180, 150)">
+        {Array.from({ length: 21 }, (_, i) => -90 + i * 9).map((angle, index) => (
+          <g key={index} transform={`rotate(${angle})`}>
+            <rect x="-4" y="-110" width="8" height="28" rx="4" fill="#EEF5FF" />
+            <rect x="-4" y="-104" width="8" height="22" rx="4" fill="url(#uptimeTickGradient)" />
+          </g>
+        ))}
+      </g>
     </svg>
   );
 }
@@ -223,14 +244,8 @@ function EasyEffectiveManagement() {
       title="Easy & Effective Management"
       description="Schoolcube.net is intuitive, clear and easy to use. It provides 24/7 system stability and reliability."
     >
-      <Panel className="text-center relative">
-        <div className="text-[14px] font-bold text-[#2B3674] mb-1">System Uptime</div>
-        <div className="flex justify-between text-[11px] text-[#A3AED0] px-2 mb-1">
-          <span>Stability Score</span>
-          <span>Reliability</span>
-        </div>
-        <SystemUptimeGauge percent={98} />
-        <div className="text-2xl font-bold text-[#2B3674] -mt-8">98%</div>
+      <Panel className="relative flex items-center justify-center text-center">
+        <SystemUptimeGauge />
       </Panel>
     </Card>
   );
@@ -243,24 +258,25 @@ function SubscriptionDonut({ percent = 90 }) {
   const offset = circumference * (1 - percent / 100);
 
   return (
-    <svg width="130" height="130" viewBox="0 0 130 130">
-      <circle cx="65" cy="65" r={r} fill="none" stroke="#E9EDF7" strokeWidth="12" />
-      <motion.circle
+    <svg
+      width="130"
+      height="130"
+      viewBox="0 0 130 130"
+      className="h-[100px] w-[100px] md:h-[130px] md:w-[130px]"
+    >
+      <circle cx="65" cy="65" r={r} fill="none" stroke="#CAE3FF" strokeWidth="12" />
+      <circle
         cx="65"
         cy="65"
         r={r}
         fill="none"
-        stroke="#4318FF"
+        stroke="#6FBBFF"
         strokeWidth="12"
         strokeDasharray={circumference}
-        initial={{ strokeDashoffset: circumference }}
-        whileInView={{ strokeDashoffset: offset }}
-        viewport={{ once: true }}
-        transition={{ duration: 1, ease: "easeInOut" }}
-        strokeLinecap="round"
-        transform="rotate(-90 65 65)"
+        strokeDashoffset={offset}
+        transform="rotate(60 65 65)"
       />
-      <text x="65" y="72" textAnchor="middle" fontSize="20" fontWeight="700" fill="#2B3674">
+      <text x="65" y="72" textAnchor="middle" fontSize="18" fontWeight="700" fill="#1D2129">
         {percent}%
       </text>
     </svg>
@@ -275,8 +291,8 @@ function CostEffective() {
     >
       <Panel className="flex flex-col items-center justify-center">
         <SubscriptionDonut percent={90} />
-        <div className="flex items-center gap-2 text-[12px] text-[#A3AED0] mt-3">
-          <span className="inline-block w-1 h-3 rounded-sm bg-[#4318FF]" />
+        <div className="mt-3 flex items-center gap-2 text-[12px] text-[#4E5969]">
+          <span className="inline-block h-3 w-1 rounded-sm bg-[#339BFE]" />
           Subscription Comparison
         </div>
       </Panel>
@@ -292,26 +308,25 @@ function Security() {
       description="All data on Schoolcube.net is protected by high-profile security."
     >
       <Panel className="flex flex-col items-center justify-center py-6">
-        <svg width="80" height="96" viewBox="0 0 80 96" fill="none">
-          <path
-            d="M40 0L76 16V44C76 67.2 59.8 88.8 40 96C20.2 88.8 4 67.2 4 44V16L40 0Z"
-            fill="url(#shield_grad)"
-          />
-          <path
-            d="M40 0V96C20.2 88.8 4 67.2 4 44V16L40 0Z"
-            fill="#FFFFFF"
-            fillOpacity="0.2"
-          />
-          <line x1="40" y1="0" x2="40" y2="96" stroke="#FFFFFF" strokeWidth="2" />
-          <line x1="4" y1="40" x2="76" y2="40" stroke="#FFFFFF" strokeWidth="2" />
+        <svg
+          viewBox="0 0 240 260"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-[99px] w-[90px]"
+        >
           <defs>
-            <linearGradient id="shield_grad" x1="4" y1="0" x2="76" y2="96" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#6AD2FF" />
-              <stop offset="1" stopColor="#3965FF" />
+            <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#6FBBFF" />
+              <stop offset="49.04%" stopColor="#7DBAF1" />
+              <stop offset="100%" stopColor="#E5F3FF" />
             </linearGradient>
           </defs>
+          <path d="M 110 5.4 C 75 18 35 32 10 39.5 C 9 60 9 100 10 100 L 110 64.5 Z" fill="#6FBBFF" />
+          <path d="M 130 5.4 C 165 18 205 32 230 39.5 C 231 60 231 100 230 100 L 130 64.5 Z" fill="#6FBBFF" />
+          <path d="M 10 119 L 110 83.5 V 254.6 C 47.4 227 15 174 10 119 Z" fill="url(#shieldGradient)" />
+          <path d="M 230 119 L 130 83.5 V 254.6 C 192.6 227 225 174 230 119 Z" fill="url(#shieldGradient)" />
         </svg>
-        <div className="text-[13px] text-[#A3AED0] mt-4">Data Encryption</div>
+        <div className="mt-4 text-[12px] text-[#4E5969]">Data Encryption</div>
       </Panel>
     </Card>
   );
@@ -325,25 +340,26 @@ function DataBackup() {
       description="Data is backed up automatically on a daily, weekly and monthly basis."
     >
       <Panel className="flex flex-col items-center justify-center py-6">
-        <svg width="80" height="90" viewBox="0 0 80 90" fill="none">
-          <path
-            d="M24 38V26A16 16 0 0156 26V38"
-            stroke="url(#lock_grad)"
-            strokeWidth="7"
-            strokeLinecap="round"
-          />
-          <rect x="10" y="38" width="60" height="46" rx="12" fill="url(#lock_grad)" />
-          <circle cx="30" cy="61" r="3.5" fill="#FFFFFF" />
-          <circle cx="40" cy="61" r="3.5" fill="#FFFFFF" />
-          <circle cx="50" cy="61" r="3.5" fill="#FFFFFF" />
+        <svg
+          viewBox="0 0 200 220"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-[103px] w-[100px]"
+        >
           <defs>
-            <linearGradient id="lock_grad" x1="10" y1="12" x2="70" y2="84" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#6AD2FF" />
-              <stop offset="1" stopColor="#3965FF" />
+            <linearGradient id="lockBodyGradient" x1="100" y1="80" x2="100" y2="210" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#6FBBFF" />
+              <stop offset="46.63%" stopColor="#99CFFF" />
+              <stop offset="100%" stopColor="#C6E4FF" />
             </linearGradient>
           </defs>
+          <path d="M 50 100 V 60 A 50 50 0 0 1 150 60 V 100" stroke="#66B5FF" strokeWidth="15" strokeLinecap="round" fill="none" />
+          <rect x="10" y="85" width="180" height="125" rx="36" fill="url(#lockBodyGradient)" />
+          <circle cx="60" cy="147" r="10" fill="white" />
+          <circle cx="100" cy="147" r="10" fill="white" />
+          <circle cx="140" cy="147" r="10" fill="white" />
         </svg>
-        <div className="text-[13px] text-[#A3AED0] mt-4">Backup Storage</div>
+        <div className="mt-4 text-[13px] text-[#4E5969]">Backup Storage</div>
       </Panel>
     </Card>
   );
@@ -352,70 +368,46 @@ function DataBackup() {
 /* Main Layout */
 export default function KeyBenefits() {
   return (
-    <section className="bg-white px-6 py-16 md:px-12 md:py-24">
-      <div
-        className="mx-auto flex flex-col"
-        style={{ width: "988px", maxWidth: "100%", gap: "80px" }}
-      >
-        {/* Header block: 988 x 136, gap 28px */}
-        <div className="flex flex-col" style={{ gap: "28px" }}>
-          <motion.h2
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
+    <section className="bg-white px-4 py-12 sm:px-6 md:px-12 md:py-24">
+      <div className="mx-auto flex w-full max-w-[988px] flex-col gap-8 md:gap-[80px]">
+        {/* Header block */}
+        <div className="flex flex-col gap-4 md:gap-[28px]">
+          <h2
+            className="text-[24px] md:text-[40px]"
             style={{
               color: COLORS.navy,
               fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontWeight: 700,
-              fontSize: "40px",
               lineHeight: "130%",
               letterSpacing: "0px",
             }}
           >
             Key Benefits
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
+          </h2>
+          <p
+            className="w-full text-[14px] md:w-[676px] md:max-w-full md:text-[18px]"
             style={{
               color: COLORS.bodyText,
               fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontWeight: 500,
-              fontSize: "18px",
               lineHeight: "155%",
               letterSpacing: "0px",
-              width: "676px",
-              maxWidth: "100%",
             }}
           >
             Discover the advantages that help schools operate more efficiently,
             save time, and deliver a better learning experience.
-          </motion.p>
+          </p>
         </div>
 
-        {/* Cards container: 952 x 1336, row gap 74px, column gap 52px */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="mx-auto grid"
-          style={{
-            width: "952px",
-            maxWidth: "100%",
-            gridTemplateColumns: "repeat(2, 450px)",
-            justifyContent: "center",
-            rowGap: "74px",
-            columnGap: "52px",
-          }}
-        >
+        {/* Cards container */}
+        <div className="grid w-full grid-cols-1 justify-items-center gap-8 md:w-full md:grid-cols-2 md:gap-x-[52px] md:gap-y-[74px]">
           <UpToDateInformation />
           <DataAnalysis />
           <EasyEffectiveManagement />
           <CostEffective />
           <Security />
           <DataBackup />
-        </motion.div>
+        </div>
       </div>
     </section>
   );

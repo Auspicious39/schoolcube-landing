@@ -73,7 +73,7 @@ const SchoolAheadSection = () => {
 
   return (
     <section className="overflow-hidden bg-white pb-[74px] pt-0 md:px-0 md:pb-0 md:pt-[176px]">
-      <div className="mx-auto w-full ">
+      <div className="mx-auto w-full">
         <div className="mb-10 flex flex-col items-start gap-6 md:mb-[84px] md:gap-7">
           <h2 className="min-w-0 text-lg font-bold leading-[130%] text-[#203684] sm:text-xl md:text-[40px]">
             Put Your School Ahead of Others
@@ -89,13 +89,13 @@ const SchoolAheadSection = () => {
           {features.map((feature, i) => (
             <article
               key={i}
-              className="flex h-[230px] flex-col justify-center gap-6 rounded-[20px] bg-[#F6FBFF] px-[31px] py-3 md:h-[259px] md:min-h-0 md:px-[31px] md:py-5"
+              className="group flex h-[230px] flex-col justify-center gap-6 rounded-[20px] bg-[#F6FBFF] px-[31px] py-3 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:bg-white hover:shadow-[0px_16px_32px_rgba(32,54,132,0.08)] md:h-[259px] md:min-h-0 md:px-[31px] md:py-5 cursor-pointer"
             >
-              <div className="h-8 w-8 shrink-0 md:h-10 md:w-10">
+              <div className="h-8 w-8 shrink-0 transition-transform duration-300 group-hover:scale-110 md:h-10 md:w-10">
                 {feature.icon}
               </div>
 
-              <h3 className="-mb-4 text-[16px] font-bold leading-[1.395] text-[#282828] md:text-xl">
+              <h3 className="-mb-4 text-[16px] font-bold leading-[1.395] text-[#282828] transition-colors duration-300 group-hover:text-[#203684] md:text-xl">
                 {feature.title}
               </h3>
 

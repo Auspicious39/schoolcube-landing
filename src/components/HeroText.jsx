@@ -1,7 +1,57 @@
+import { useState, useEffect } from "react";
+import { Search } from "lucide-react";
 import backgroundImage from "../assets/Background.png";
-import searchGif from "../assets/Search.gif";
+
+const phrases = [
+  "Best School Management Portal",
+  "All in one Platform",
+  "Tailored to Meet your School’s Needs",
+  "Secure & Compliant",
+];
+
+const TYPE_SPEED = 60;      // ms per character while typing
+const DELETE_SPEED = 35;    // ms per character while deleting
+const PAUSE_AFTER_TYPE = 1800; // ms to hold full phrase before deleting
+const PAUSE_AFTER_DELETE = 400; // ms to pause on empty before next phrase
+
+const useTypewriter = (words) => {
+  const [text, setText] = useState("");
+  const [wordIndex, setWordIndex] = useState(0);
+  const [deleting, setDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentWord = words[wordIndex];
+    let timeout;
+
+    if (!deleting && text === currentWord) {
+      timeout = setTimeout(() => setDeleting(true), PAUSE_AFTER_TYPE);
+    } else if (deleting && text === "") {
+      timeout = setTimeout(() => {
+        setDeleting(false);
+        setWordIndex((prev) => (prev + 1) % words.length);
+      }, PAUSE_AFTER_DELETE);
+    } else {
+      timeout = setTimeout(
+        () => {
+          setText((prev) =>
+            deleting
+              ? currentWord.slice(0, prev.length - 1)
+              : currentWord.slice(0, prev.length + 1)
+          );
+        },
+        deleting ? DELETE_SPEED : TYPE_SPEED
+      );
+    }
+
+    return () => clearTimeout(timeout);
+  }, [text, deleting, wordIndex, words]);
+
+  return text;
+};
+
 
 const HeroText = () => {
+  const typedText = useTypewriter(phrases);
   return (
     <section
       className="relative flex h-[262px] items-center justify-center overflow-hidden rounded-[10px] bg-cover bg-center md:h-[725px] md:rounded-[8px]"
@@ -21,14 +71,15 @@ const HeroText = () => {
           </p>
         </div>
 
-        <img
-          src={searchGif}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="mt-5 h-[26px] w-[182px] rounded-[32px] object-cover md:mt-0 md:h-[70px] md:w-[726px]"
-        />
+        <div className="mt-5 flex w-full max-w-[320px] items-center gap-3 rounded-full bg-white px-5 py-3 shadow-lg md:mt-8 md:max-w-[674px] md:px-7 md:py-4">
+          <Search className="h-4 w-4 shrink-0 text-gray-400 md:h-6 md:w-6" />
+          <span className="truncate text-left text-[13px] font-medium text-[#475467] md:text-[24px]">
+            {typedText}
+            <span className="ml-0.5 inline-block w-[2px] animate-pulse bg-gray-400 align-middle text-[13px] md:text-[20px]">
+              &nbsp;
+            </span>
+          </span>
+        </div>
       </div>
     </section>
   );
