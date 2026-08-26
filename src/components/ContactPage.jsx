@@ -5,7 +5,7 @@ import phoneIcon from "../assets/contact-phone.svg";
 
 export default function ContactPage() {
   return (
-    <main className="overflow-x-hidden bg-white px-4 pb-8 pt-6 sm:px-6 sm:pb-12 sm:pt-12 lg:px-6 lg:pb-[132px] lg:pt-[100px]">
+    <main className="overflow-x-hidden bg-white px-4 pb-8 pt-16 sm:px-6 sm:pb-12 sm:pt-12 lg:px-6 lg:pb-[132px] lg:pt-[100px]">
       <section className="mx-auto max-w-[1200px]">
         <div className="mx-auto max-w-[290px] text-center sm:max-w-[560px] lg:max-w-[846px]">
           <h1 className="text-[22px] font-bold leading-[1.2] tracking-[0.2px] text-[#203684] sm:text-[40px] lg:text-[56px] lg:tracking-[-1px] font-['Plus_Jakarta_Sans',sans-serif]">

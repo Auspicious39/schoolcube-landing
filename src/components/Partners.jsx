@@ -26,7 +26,7 @@ const Partners = () => {
           <img
             src={googleCloud}
             alt="Google Cloud"
-            className="w-[70px] object-contain md:w-[90px]"
+            className="w-[110px] object-contain md:w-[90px]"
           />
         </div>
       </div>
