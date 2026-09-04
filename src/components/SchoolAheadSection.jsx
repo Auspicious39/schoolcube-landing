@@ -72,34 +72,34 @@ const SchoolAheadSection = () => {
   ];
 
   return (
-    <section className="overflow-hidden bg-white pb-[74px] pt-0 md:px-0 md:pb-0 md:pt-[176px]">
+    <section className="overflow-hidden bg-white pb-[4.625rem] pt-0 md:px-0 md:pb-0 md:pt-[11rem]">
       <div className="mx-auto w-full">
-        <div className="mb-10 flex flex-col items-start gap-6 md:mb-[84px] md:gap-7">
-          <h2 className="min-w-0 text-lg font-bold leading-[130%] text-[#203684] sm:text-xl md:text-[40px]">
+        <div className="mb-10 flex flex-col items-start gap-6 md:mb-[5.25rem] md:gap-7">
+          <h2 className="min-w-0 text-lg font-bold leading-[130%] text-[#203684] sm:text-xl md:text-[2.5rem]">
             Put Your School Ahead of Others
           </h2>
 
-          <p className="max-w-[291px] text-[14px] font-medium leading-[1.55] text-[#475467] md:max-w-[519px] md:text-[18px] md:leading-[1.55]">
+          <p className="max-w-[18.1875rem] text-[0.875rem] font-medium leading-[1.55] text-[#475467] md:max-w-[32.4375rem] md:text-[1.125rem] md:leading-[1.55]">
             Increase the efficiency of your school by eliminating manual
             management tasks, which are prone to errors.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-[30px] md:grid-cols-3 md:gap-[20px]">
+        <div className="grid grid-cols-1 gap-[1.875rem] md:grid-cols-3 md:gap-[1.25rem]">
           {features.map((feature, i) => (
             <article
               key={i}
-              className="group flex h-[230px] flex-col justify-center gap-6 rounded-[20px] bg-[#F6FBFF] px-[31px] py-3 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:bg-white hover:shadow-[0px_16px_32px_rgba(32,54,132,0.08)] md:h-[259px] md:min-h-0 md:px-[31px] md:py-5 cursor-pointer"
+              className="group flex h-[14.375rem] flex-col justify-center gap-6 rounded-[1.25rem] bg-[#F6FBFF] px-[1.9375rem] py-3 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:bg-white hover:shadow-[0rem_1rem_2rem_rgba(32,54,132,0.08)] md:h-[16.1875rem] md:min-h-0 md:px-[1.9375rem] md:py-5 cursor-pointer"
             >
               <div className="h-8 w-8 shrink-0 transition-transform duration-300 group-hover:scale-110 md:h-10 md:w-10">
                 {feature.icon}
               </div>
 
-              <h3 className="-mb-4 text-[16px] font-bold leading-[1.395] text-[#282828] transition-colors duration-300 group-hover:text-[#203684] md:text-xl">
+              <h3 className="-mb-4 text-[1rem] font-bold leading-[1.395] text-[#282828] transition-colors duration-300 group-hover:text-[#203684] md:text-xl">
                 {feature.title}
               </h3>
 
-              <p className="text-sm font-medium leading-[155%] text-[#475467] md:text-[14px]">
+              <p className="text-sm font-medium leading-[155%] text-[#475467] md:text-[0.875rem]">
                 {feature.body}
               </p>
             </article>

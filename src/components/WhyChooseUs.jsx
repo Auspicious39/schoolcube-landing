@@ -13,48 +13,60 @@ const cards = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="relative w-full h-[180vh] md:h-auto bg-[#EBEBEB] font-['Plus_Jakarta_Sans',sans-serif]">
-      <div className="sticky top-0 z-0 h-[399px] md:h-screen w-full overflow-hidden flex flex-col">
+    <section className="relative isolate w-full bg-[#EBEBEB] font-['Plus_Jakarta_Sans',sans-serif]">
+      {/* Header / Background — stays pinned at the back (z-0) */}
+      <div className="sticky top-0 z-0 h-[24.9375rem] md:h-screen w-full overflow-hidden flex flex-col">
         <img
           src={backgroundImage}
           alt=""
-          className="absolute inset-0 w-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/50 md:bg-black/40" />
 
-        <div className="relative z-10 mx-auto flex w-full max-w-[327px] gap-3 pt-9 text-white sm:gap-5 md:max-w-[1200px] md:justify-between md:px-6 md:pt-16 md:gap-8">
-          <h2 className="flex-1 min-w-0 text-lg font-bold leading-[136%] tracking-[0.2px] text-white md:max-w-[430px] md:text-4xl md:leading-[130%] md:tracking-normal">
+        <div className="relative z-10 mx-auto flex w-full max-w-[20.4375rem] gap-6 pt-9 text-white md:max-w-[75rem] md:justify-between md:gap-8 md:px-6 md:pt-16">
+          <h2 className="w-[8.875rem] shrink-0 text-lg font-bold leading-[136%] tracking-[0.0125rem] text-white md:max-w-[26.875rem] md:flex-1 md:text-[2.5rem] md:leading-[130%] md:tracking-normal">
             Why Choose Us?
           </h2>
-
-          <p className="flex-1 min-w-0 text-xs sm:text-sm font-normal leading-[155%] tracking-[0px] text-white md:max-w-[420px] md:text-lg md:text-slate-200">
+          <p className="w-[9.75rem] shrink-0 text-sm font-normal leading-[155%] tracking-[0rem] text-white md:hidden">
             Discover the advantages that help schools operate more efficiently,
             save time, and deliver a better learning experience.
+          </p>
+          <p className="hidden md:block md:max-w-[26.25rem] md:flex-1 md:text-lg md:font-normal md:leading-[155%] md:tracking-[0rem] md:text-slate-200">
+            Built with educators in mind, our platform makes managing students,
+            staff, and daily operations easier than ever.
           </p>
         </div>
       </div>
 
-      <div className="relative z-10 -mt-[220px] md:-mt-[calc(100vh-220px)] mx-auto max-w-[1149px] px-4 pb-12 md:px-6 md:pb-[15vh]">
-        {cards.map((card, index) => (
-          <div
-            key={index}
-            className="sticky pb-[12vh] md:pb-0 md:mb-20 top-[var(--mobile-top)] md:top-[var(--desktop-top)]"
-            style={{
-              "--mobile-top": `${178 + index * 12}px`,
-              "--desktop-top": `${220 + index * 16}px`,
-              zIndex: index + 1,
-            }}
-          >
-            <div className="overflow-hidden rounded-[16px] md:rounded-[24px] bg-white shadow-2xl transition-all duration-300">
-              <img
-                src={card.src}
-                alt={card.alt || ""}
-                className="block h-auto w-full object-cover"
-              />
-            </div>
-          </div>
-        ))}
+      {/* Cards — each card owns a full viewport of scroll distance */}
+      {/* Cards */}
+<div className="relative z-10 -mt-[13.0625rem] md:-mt-[calc(100vh-12.6875rem)]">
+  {cards.map((card, index) => (
+    <div
+      key={index}
+      className="
+        sticky top-[11rem]
+        flex h-[85dvh] min-h-[31.5rem]
+        items-start justify-center
+        px-6 pt-6
+        md:top-[5rem]
+        md:h-screen md:min-h-0
+        md:items-center md:pt-0
+      "
+      style={{ zIndex: index + 1 }}
+    >
+      <div className="w-full max-w-[71.8125rem] overflow-hidden rounded-[0.356rem] bg-white shadow-none md:rounded-[1.5rem] md:shadow-2xl">
+        <img
+          src={card.src}
+          alt={card.alt || ""}
+          className="block aspect-[3447/1587] w-full object-cover"
+        />
       </div>
+    </div>
+  ))}
+
+  <div className="h-[20dvh] md:h-[30vh]" />
+</div>
     </section>
   );
 };

@@ -68,14 +68,14 @@ const FeatureTabs = () => {
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
   return (
-    <section className="overflow-hidden bg-white px-4 py-16 sm:px-6 md:px-0 md:pt-[76px] md:pb-[111px]">
+    <section className="overflow-hidden bg-white px-4 py-16 sm:px-6 md:px-0 md:pt-[4.75rem] md:pb-[6.9375rem]">
       <div className="w-full">
-        <div className="mx-auto mb-10 flex w-full max-w-full items-center gap-2 overflow-x-auto rounded-[40px] border border-black/15 p-3 scrollbar-hide sm:gap-3 md:mb-[111px] md:max-w-[892px] md:flex-nowrap md:justify-between md:gap-0">
+        <div className="mx-auto mb-10 flex w-full max-w-full items-center gap-2 overflow-x-auto rounded-[2.5rem] border border-black/15 p-3 sm:gap-3 md:mb-[6.9375rem] md:max-w-[55.75rem] md:flex-nowrap md:justify-between md:gap-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab)}
-              className={`flex h-auto w-max flex-shrink-0 items-center justify-center gap-[10px] whitespace-nowrap rounded-[40px] px-4 sm:px-5 py-2 md:py-4 text-sm md:text-lg font-medium transition-all duration-300 ${
+              className={`flex h-auto w-max flex-shrink-0 items-center justify-center gap-[0.625rem] whitespace-nowrap rounded-[2.5rem] px-4 sm:px-5 py-2 md:py-4 text-sm md:text-lg font-medium transition-all duration-300 ${
                 activeTab.id === tab.id
                   ? "bg-[#339BFE] text-white"
                   : "text-[#666]"
@@ -86,9 +86,9 @@ const FeatureTabs = () => {
           ))}
         </div>
 
-        <div className="mx-auto flex w-full max-w-[892px] flex-col items-center gap-10 md:flex-row md:items-start md:justify-between md:gap-[284px]">
-          <div className="flex w-full flex-col gap-4 md:max-w-[358px] md:flex-shrink-0">
-            <h2 className="text-lg font-bold leading-[141%] text-black sm:text-xl md:text-[30px]">
+        <div className="mx-auto flex w-full max-w-[55.75rem] flex-col items-center gap-10 md:flex-row md:items-start md:justify-between md:gap-[17.75rem]">
+          <div className="flex w-full flex-col gap-4 md:max-w-[22.375rem] md:flex-shrink-0">
+            <h2 className="text-lg font-bold leading-[141%] text-black sm:text-xl md:text-[1.875rem]">
               {activeTab.heading}
             </h2>
 

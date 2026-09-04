@@ -9,7 +9,7 @@ const TrustBadges = () => {
   ];
 
   return (
-    <section className="mt-[38px] mb-[60px] md:mt-9 md:px-0">
+    <section className="mt-[2.375rem] mb-[3.75rem] md:mt-9 md:px-0">
       <style>{`
         @keyframes verticalScroll {
           0% { transform: translateY(0); }
@@ -34,15 +34,15 @@ const TrustBadges = () => {
                 }
       `}</style>
 
-      <div className="relative mx-auto flex h-[140px] w-full max-w-[280px] flex-col items-center overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)] md:hidden">
+      <div className="relative mx-auto flex h-[8.75rem] w-full max-w-[17.5rem] flex-col items-center overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)] md:hidden">
         <div className="animate-vertical-scroll flex flex-col items-center gap-3">
           {[...badges, ...badges].map(({ icon: Icon, label }, i) => (
             <div
               key={i}
-              className="flex h-[39px] w-fit items-center justify-center gap-[6px] whitespace-nowrap rounded-[32px] bg-[#f1f1f1] px-4"
+              className="flex h-[2.4375rem] w-fit items-center justify-center gap-[0.375rem] whitespace-nowrap rounded-[2rem] bg-[#f1f1f1] px-4"
             >
               <Icon size={16} fill="#203684" color="white" />
-              <span className="text-[11px] font-medium text-[#282828]">
+              <span className="text-[0.6875rem] font-medium text-[#282828]">
                 {label}
               </span>
             </div>
@@ -54,7 +54,7 @@ const TrustBadges = () => {
         {badges.map(({ icon: Icon, label }, i) => (
           <div
             key={i}
-            className="group flex h-12 w-fit cursor-default items-center justify-center gap-2 whitespace-nowrap rounded-full bg-[#f1f1f1] px-6 shadow-none md:w-[357px] md:gap-3 md:px-5"
+            className="group flex h-12 w-fit cursor-default items-center justify-center gap-2 whitespace-nowrap rounded-full bg-[#f1f1f1] px-6 shadow-none md:w-[22.3125rem] md:gap-3 md:px-5"
           >
             <Icon
               size={24}

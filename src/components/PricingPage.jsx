@@ -42,41 +42,41 @@ const planDescription =
 
 export default function PricingPage() {
   return (
-    <main className="bg-white px-6 pb-[127px] pt-[40px] md:px-6 md:pb-[100px] md:pt-[100px]">
-      <section className="mx-auto max-w-[1200px]">
-        <div className="mx-auto max-w-[846px] pb-[17px] text-center lg:pb-0">
-          <h1 className="text-[18px] font-bold leading-[1.3] text-[#203684] md:text-[40px] lg:text-[56px] lg:leading-[1.39] lg:tracking-[0.4px]">
+    <main className="bg-white px-6 pb-[7.9375rem] pt-[2.5rem] md:px-6 md:pb-[6.25rem] md:pt-[6.25rem]">
+      <section className="mx-auto max-w-[75rem]">
+        <div className="mx-auto max-w-[52.875rem] pb-[1.0625rem] text-center lg:pb-0">
+          <h1 className="text-[1.125rem] font-bold leading-[1.3] text-[#203684] md:text-[2.5rem] lg:text-[3.5rem] lg:leading-[1.39] lg:tracking-[0.025rem]">
             Pricing that Suits You
           </h1>
-          <p className="mx-auto mt-3 max-w-[302px] text-[14px] font-medium leading-[1.55] text-[#475467] md:max-w-[680px] md:text-[18px] lg:mt-[19px] lg:max-w-[846px] lg:text-[20px] lg:leading-[1.7] lg:tracking-[0.3px] lg:text-[#47505b]">
+          <p className="mx-auto mt-3 max-w-[18.875rem] text-[0.875rem] font-medium leading-[1.55] text-[#475467] md:max-w-[42.5rem] md:text-[1.125rem] lg:mt-[1.1875rem] lg:max-w-[52.875rem] lg:text-[1.25rem] lg:leading-[1.7] lg:tracking-[0.01875rem] lg:text-[#47505b]">
             Our subscriptions come with flexible and convenient packages for
             various school needs. Subscribe to either Schoolbolt or SchoolPro
             plan to experience our amazing service.
           </p>
         </div>
 
-        <div className="mt-[42px] grid grid-cols-1 gap-10 sm:grid-cols-2 lg:hidden">
+        <div className="mt-[2.625rem] grid grid-cols-1 gap-10 sm:grid-cols-2 lg:hidden">
           {plans.map((plan) => (
             <article
               key={plan.name}
-              className="overflow-hidden rounded-[8px] border border-[#eaebf0] bg-white p-5"
+              className="overflow-hidden rounded-[0.5rem] border border-[#eaebf0] bg-white p-5"
             >
-              <div className="flex flex-col gap-[14px]">
-                <h2 className="text-[18px] font-bold leading-normal text-[#203684]">
+              <div className="flex flex-col gap-[0.875rem]">
+                <h2 className="text-[1.125rem] font-bold leading-normal text-[#203684]">
                   {plan.name}
                 </h2>
-                <p className="text-[14px] font-medium leading-6 text-[#5d5262]">
+                <p className="text-[0.875rem] font-medium leading-6 text-[#5d5262]">
                   {planDescription}
                 </p>
                 <div className="flex flex-col gap-2">
-                  <p className="text-[24px] font-bold leading-normal text-[#203684]">
+                  <p className="text-[1.5rem] font-bold leading-normal text-[#203684]">
                     {plan.price}
                   </p>
                   <p className="text-xs leading-normal text-[#47505b]">
                     Per student per term
                   </p>
                 </div>
-                <button className="w-full rounded-[5px] bg-[#339bfe] px-[37px] py-3 text-[14px] font-medium leading-[1.2] text-white transition hover:bg-[#203684]">
+                <button className="w-full rounded-[0.3125rem] bg-[#339bfe] px-[2.3125rem] py-3 text-[0.875rem] font-medium leading-[1.2] text-white transition hover:bg-[#203684]">
                   Get Started
                 </button>
               </div>
@@ -88,7 +88,7 @@ export default function PricingPage() {
                 {features.slice(0, plan.included).map((feature, index) => (
                   <li
                     key={`${feature}-${index}`}
-                    className="flex items-start gap-2 text-[14px] leading-[1.4] tracking-[0.14px] text-[#47505b]"
+                    className="flex items-start gap-2 text-[0.875rem] leading-[1.4] tracking-[0.00875rem] text-[#47505b]"
                   >
                     <img src={featureCheckIcon} alt="" className="h-6 w-6 shrink-0" />
                     <span>{feature}</span>
@@ -99,24 +99,24 @@ export default function PricingPage() {
           ))}
         </div>
 
-        <div className="mt-[154px] hidden grid-cols-4 gap-6 lg:grid">
+        <div className="mt-[9.625rem] hidden grid-cols-4 gap-6 lg:grid">
           {plans.map((plan) => (
             <article
               key={plan.name}
-              className="flex h-[346px] flex-col rounded-[8px] border border-[#eaebf0] bg-[#fefeff] p-6"
+              className="flex h-[21.625rem] flex-col rounded-[0.5rem] border border-[#eaebf0] bg-[#fefeff] p-6"
             >
-              <div className="flex flex-1 flex-col gap-[14px] py-8">
-                <h2 className="text-[20px] font-bold leading-6 text-[#203684]">
+              <div className="flex flex-1 flex-col gap-[0.875rem] py-8">
+                <h2 className="text-[1.25rem] font-bold leading-6 text-[#203684]">
                   {plan.name}
                 </h2>
-                <p className="text-[16px] font-medium leading-6 text-[#47505b]">
+                <p className="text-[1rem] font-medium leading-6 text-[#47505b]">
                   {planDescription}
                 </p>
-                <p className="mt-auto text-[48px] font-extrabold leading-none text-[#203684]">
+                <p className="mt-auto text-[3rem] font-extrabold leading-none text-[#203684]">
                   {plan.price}
                 </p>
               </div>
-              <button className="h-8 w-full rounded-[5px] bg-[#339bfe] px-5 text-[14px] font-normal text-white transition hover:bg-[#203684]">
+              <button className="h-8 w-full rounded-[0.3125rem] bg-[#339bfe] px-5 text-[0.875rem] font-normal text-white transition hover:bg-[#203684]">
                 Get Started
               </button>
             </article>
@@ -127,7 +127,7 @@ export default function PricingPage() {
           {plans.map((plan) => (
             <article
               key={plan.name}
-              className="rounded-[8px] border border-[#eaebf0] bg-white p-6"
+              className="rounded-[0.5rem] border border-[#eaebf0] bg-white p-6"
             >
               <div className="flex items-center gap-2 text-base font-bold leading-6 text-[#475467]">
                 <img
@@ -142,7 +142,7 @@ export default function PricingPage() {
                 {features.slice(0, plan.included).map((feature, index) => (
                   <li
                     key={`${feature}-${index}`}
-                    className="flex items-start gap-2 text-[14px] leading-[1.4] tracking-[0.14px] text-[#47505b]"
+                    className="flex items-start gap-2 text-[0.875rem] leading-[1.4] tracking-[0.00875rem] text-[#47505b]"
                   >
                     <img
                       src={featureCheckIcon}
